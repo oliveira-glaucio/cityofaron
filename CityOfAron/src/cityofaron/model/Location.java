@@ -28,6 +28,11 @@ public class Location implements Serializable{
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" + "description=" + description + ", symbol=" + symbol + '}';
+    }
     
     
 }

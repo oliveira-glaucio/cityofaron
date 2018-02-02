@@ -1,6 +1,7 @@
 package cityofaron.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -9,10 +10,10 @@ import java.io.Serializable;
 public class Game implements Serializable{
     private Map theMap;
     private Player thePlayer;
-    private int cropData;
-    private int team;
-    private int animals;
-    private int tools;
+    private CropData cropData;
+    private TeamMember[] team;
+    private ArrayList<ListItem> animals;
+    private ArrayList<ListItem> tools;
     private ListItem provisions;
     
     

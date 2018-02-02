@@ -37,6 +37,12 @@ public class Map implements Serializable{
     public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
+
+    @Override
+    public String toString() {
+        return "Map{" + "rowCount=" + rowCount + ", colCount=" + colCount + ", locations=" + locations + '}';
+    }
+    
     
     
 }
