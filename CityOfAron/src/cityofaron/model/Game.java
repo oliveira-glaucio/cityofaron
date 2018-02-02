@@ -13,7 +13,7 @@ public class Game implements Serializable{
     private int team;
     private int animals;
     private int tools;
-    private int provisions;
+    private ListItem provisions;
     
     
     public Game(){
