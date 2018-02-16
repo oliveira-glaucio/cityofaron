@@ -9,6 +9,11 @@ import java.util.Random;
  */
 
 public class CropControl {
+    
+    // constants
+     private static final int LAND_BASE = 17;
+     private static final int LAND_RANGE = 10;
+
 private static Random random = new Random();    
     
     
@@ -53,7 +58,7 @@ private static Random random = new Random();
  // Parameters: none
  // Returns: the land cost
  public static int calcLandCost(){
-     int landPrice = random.nextInt(10) + 17;
+     int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;
      return landPrice;
  }
  

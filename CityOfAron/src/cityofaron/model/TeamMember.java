@@ -5,13 +5,11 @@
  */
 package cityofaron.model;
 
-import java.io.Serializable;
-
 /**
  *
  * @author ericcosta
  */
-public class TeamMember implements Serializable{
+public class TeamMember {
     
     private String name;
     
