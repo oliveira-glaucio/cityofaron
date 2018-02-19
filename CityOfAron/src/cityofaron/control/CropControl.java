@@ -185,7 +185,6 @@ public class CropControl {
 // Parameters: Wheat Allocated
 // Returns: Wheat Stored.
 // Pre-conditions: Wheat must be positive, and cannot exceed the amount that is stored
-public class feedPeople {
 public static int feedPeople(int wheatInStore,int wheatAllocated) {
    // if wheatInStore < 0, return -1
    if(wheatInStore < 0)
