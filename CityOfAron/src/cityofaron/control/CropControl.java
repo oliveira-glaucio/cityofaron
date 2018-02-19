@@ -179,3 +179,50 @@ public class CropControl {
         CropControl.cropData = cropData;
     }
 }
+
+// The feedPeople method
+// Purpose: To feed the people
+// Parameters: Wheat Allocated
+// Returns: Wheat Stored.
+// Pre-conditions: Wheat must be positive, and cannot exceed the amount that is stored
+public class feedPeople {
+public static int feedPeople(int wheatInStore,int wheatAllocated) {
+   // if wheatInStore < 0, return -1
+   if(wheatInStore < 0)
+   return -1;
+   //if wheatAllocated > wheatInStore,  return -1
+   if (wheatAllocated > wheatInStore)
+   return -1;
+   // wheatInStore = wheatInStore– wheatAllocated
+   wheatInStore =wheatInStore - wheatAllocated;
+   //return wheatInStore
+   return wheatInStore;
+}
+}
+
+// The buylLand method
+// Purpose: To buy land
+// Parameters: the price of land and the number of acres to buy
+// Returns: the acres of owned land
+// Pre-conditions: acres to buy must be positive, but cannot exceed Bushels Of Wheat that is had at the moment.
+public static int buyLand(int acresToBuy,int wheatInStore,int landPrice,int workers,int acresOwned) {
+  //if acresToBuy < 0, return -1
+  if (acresToBuy < 0)
+  return -1;
+  //if wheatInStore < landPrice, return -1
+  if (wheatInStore < landPrice)
+  return -1;
+  //if workers < (acresOwned / 10)
+  if (workers < (acresOwned / 10))
+  return -1;
+  //if acresToBuy * landPrice > wheatInStore, return -1
+  if (acresToBuy * landPrice > wheatInStore)
+  return -1;
+  //wheatInStore = wheatInStore - (acresToBuy * landPrice)
+  wheatInStore = wheatInStore - (acresToBuy * landPrice);
+  //acresOwned = acresOwned + acresToBuy
+  acresOwned = acresOwned + acresToBuy;
+  //return acresOwned
+  return acresOwned;
+}
+
