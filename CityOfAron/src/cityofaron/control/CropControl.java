@@ -93,7 +93,7 @@ public class CropControl {
         }
 
 //randomValue = get random value between 1 and 100
-        int randomValue = randInt(1,100);
+        int randomValue = randInt(1, 100);
 
 //if randomValue > 30 then wheatEatenByRats = 0, return 0
         if (randomValue > 30) {
@@ -103,15 +103,15 @@ public class CropControl {
 //if offeringPercentage > 12
 //    wheatEatenByRats = get random value between 3 and 5 of wheat in store
         if (cropData.getOffering() > 12) {
-            wheatEatenByRats = (int)((randInt(3, 5) / 100.0) * cropData.getWheatInStore());
+            wheatEatenByRats = (int) ((randInt(3, 5) / 100.0) * cropData.getWheatInStore());
         } //else if offeringPercentage >= 8 and offeringPercentage <= 12
         //    wheatEatenByRats = get random value between 3 and 7 of wheat in store
         else if (cropData.getOffering() >= 8 && cropData.getOffering() <= 12) {
-            wheatEatenByRats = (int)((randInt(3, 7) / 100.0) * cropData.getWheatInStore());
+            wheatEatenByRats = (int) ((randInt(3, 7) / 100.0) * cropData.getWheatInStore());
         } //else if offeringPercentage < 8
         //    wheatEatenByRats = get random value between 6 and 10 of wheat in store
         else if (cropData.getOffering() < 8) {
-            wheatEatenByRats = (int)((randInt(6, 10) / 100.0) * cropData.getWheatInStore());
+            wheatEatenByRats = (int) ((randInt(6, 10) / 100.0) * cropData.getWheatInStore());
         }
 //wheatInStore = wheatInStore - wheatEatenByRats
         cropData.setWheatInStore(cropData.getWheatInStore() - wheatEatenByRats);
@@ -137,7 +137,7 @@ public class CropControl {
         int randomValue = randInt(1, 5);
 
 //peopleMovedToTheCity = (randomValue / 100) * populationInCity
-        int peopleMovedToTheCity = (int)((randomValue / 100.0) * cropData.getPopulation());
+        int peopleMovedToTheCity = (int) ((randomValue / 100.0) * cropData.getPopulation());
         cropData.setPopulation(cropData.getPopulation() + peopleMovedToTheCity);
 
 //return peopleMovedToTheCity  
@@ -165,12 +165,11 @@ public class CropControl {
         }
 
         cropData.setPopulation(cropData.getPopulation() - peopleStarved);
-                    
+
 //return peopleStarved 
         return peopleStarved;
     }
 
-    
     public static CropData getCropData() {
         return cropData;
     }
@@ -178,50 +177,54 @@ public class CropControl {
     public static void setCropData(CropData cropData) {
         CropControl.cropData = cropData;
     }
-}
 
 // The feedPeople method
 // Purpose: To feed the people
 // Parameters: Wheat Allocated
 // Returns: Wheat Stored.
 // Pre-conditions: Wheat must be positive, and cannot exceed the amount that is stored
-public static int feedPeople(int wheatInStore,int wheatAllocated) {
-   // if wheatInStore < 0, return -1
-   if(wheatInStore < 0)
-   return -1;
-   //if wheatAllocated > wheatInStore,  return -1
-   if (wheatAllocated > wheatInStore)
-   return -1;
-   // wheatInStore = wheatInStore– wheatAllocated
-   wheatInStore =wheatInStore - wheatAllocated;
-   //return wheatInStore
-   return wheatInStore;
-}
-}
+    public static int feedPeople(int wheatInStore, int wheatAllocated) {
+        // if wheatInStore < 0, return -1
+        if (wheatInStore < 0) {
+            return -1;
+        }
+        //if wheatAllocated > wheatInStore,  return -1
+        if (wheatAllocated > wheatInStore) {
+            return -1;
+        }
+        // wheatInStore = wheatInStore– wheatAllocated
+        wheatInStore = wheatInStore - wheatAllocated;
+        //return wheatInStore
+        return wheatInStore;
+    }
 
 // The buylLand method
 // Purpose: To buy land
 // Parameters: the price of land and the number of acres to buy
 // Returns: the acres of owned land
 // Pre-conditions: acres to buy must be positive, but cannot exceed Bushels Of Wheat that is had at the moment.
-public static int buyLand(int acresToBuy,int wheatInStore,int landPrice,int workers,int acresOwned) {
-  //if acresToBuy < 0, return -1
-  if (acresToBuy < 0)
-  return -1;
-  //if wheatInStore < landPrice, return -1
-  if (wheatInStore < landPrice)
-  return -1;
-  //if workers < (acresOwned / 10)
-  if (workers < (acresOwned / 10))
-  return -1;
-  //if acresToBuy * landPrice > wheatInStore, return -1
-  if (acresToBuy * landPrice > wheatInStore)
-  return -1;
-  //wheatInStore = wheatInStore - (acresToBuy * landPrice)
-  wheatInStore = wheatInStore - (acresToBuy * landPrice);
-  //acresOwned = acresOwned + acresToBuy
-  acresOwned = acresOwned + acresToBuy;
-  //return acresOwned
-  return acresOwned;
+    public static int buyLand(int acresToBuy, int wheatInStore, int landPrice, int workers, int acresOwned) {
+        //if acresToBuy < 0, return -1
+        if (acresToBuy < 0) {
+            return -1;
+        }
+        //if wheatInStore < landPrice, return -1
+        if (wheatInStore < landPrice) {
+            return -1;
+        }
+        //if workers < (acresOwned / 10)
+        if (workers < (acresOwned / 10)) {
+            return -1;
+        }
+        //if acresToBuy * landPrice > wheatInStore, return -1
+        if (acresToBuy * landPrice > wheatInStore) {
+            return -1;
+        }
+        //wheatInStore = wheatInStore - (acresToBuy * landPrice)
+        wheatInStore = wheatInStore - (acresToBuy * landPrice);
+        //acresOwned = acresOwned + acresToBuy
+        acresOwned = acresOwned + acresToBuy;
+        //return acresOwned
+        return acresOwned;
+    }
 }
-

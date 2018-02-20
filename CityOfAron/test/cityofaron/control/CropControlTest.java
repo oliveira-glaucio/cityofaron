@@ -7,25 +7,24 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
+/*
  * @author glaucio
  */
 public class CropControlTest {
     
-    public CropControlTest() {
+    public CropControlTest(){
     }
     
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass(){
     }
     
     @AfterClass
-    public static void tearDownClass() {
+    public static void tearDownClass(){
     }
 
    
-@Test
+    @Test
     public void testSellLand()
     {
         System.out.println("sellLand");
@@ -161,106 +160,47 @@ public class CropControlTest {
         assertEquals(expResult, result);
     }  
 
-}
-
-//Five tests for feed people
-//Test #1
-import org.junit.Test;
-import static org.junit.Assert.*;
-
-
-    public feedPeopleTest() {
-    }
-
-    /**
-     * Test of feedPeople method, of class cropControl.
-     */
     @Test
     public void testFeedPeople() {
         System.out.println("feedPeople");
         int wheatInStore = 2000;
         int wheatAllocated = 1000;
         int expResult = 1000;
-        int result = feedPeople.feedPeople(wheatInStore, wheatAllocated);
-        assertEquals(expResult, result);
-        
-        
+        int result = CropControl.feedPeople(wheatInStore, wheatAllocated);
+        assertEquals(expResult, result); 
     } 
-}
-//Test #2
-
-    /**
-     * Test of feedPeople method, of class feedPeople.
-     */
+    
     @Test
-    public void testFeedPeople() {
+    public void testFeedPeople2() {
         System.out.println("feedPeople");
         int wheatInStore = 0;
         int wheatAllocated = 1000;
         int expResult = -1;
-        int result = feedPeople.feedPeople(wheatInStore, wheatAllocated);
+        int result = CropControl.feedPeople(wheatInStore, wheatAllocated);
         assertEquals(expResult, result);
         
         
-    } 
-}
-
-//Test #3
+    }
 
     @Test
-    public void testFeedPeople() {
+    public void testFeedPeople3() {
         System.out.println("feedPeople");
         int wheatInStore = 1000;
         int wheatAllocated = 2000;
         int expResult = -1;
-        int result = feedPeople.feedPeople(wheatInStore, wheatAllocated);
-        assertEquals(expResult, result);
-        
-        
-    } 
-}
-//Test #4
-
-    /**
-     * Test of feedPeople method, of class feedPeople.
-     */
+        int result = CropControl.feedPeople(wheatInStore, wheatAllocated);
+        assertEquals(expResult, result);       
+    }
+    
     @Test
-    public void testFeedPeople() {
+    public void testFeedPeople4() {
         System.out.println("feedPeople");
         int wheatInStore = 2000;
         int wheatAllocated = 2000;
         int expResult = 0;
-        int result = feedPeople.feedPeople(wheatInStore, wheatAllocated);
+        int result = CropControl.feedPeople(wheatInStore, wheatAllocated);
         assertEquals(expResult, result);
-        
-        
-    } 
-}
-//Test #5
-    public feedPeopleTest() {
     }
-
-    /**
-     * Test of feedPeople method, of class feedPeople.
-     */
-    @Test
-    public void testFeedPeople() {
-        System.out.println("feedPeople");
-        int wheatInStore = 4000;
-        int wheatAllocated = 2000;
-        int expResult = 2000;
-        int result = feedPeople.feedPeople(wheatInStore, wheatAllocated);
-        assertEquals(expResult, result);
-        
-        
-    } 
-}
-
-//Fifve tests for buyLand
-//Test #1
-/*
- * Just a series of tests.
- */
 
 
     @Test
@@ -272,19 +212,12 @@ import static org.junit.Assert.*;
         int workers = 300;
         int acresOwned = 2810;
         int expResult = 2820;
-        int result = buyLand.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
+        int result = CropControl.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
         assertEquals(expResult, result);
     }
 
-
-//Test #2
-/*
- * Just a series of tests.
- */
-
-
     @Test
-    public void testBuyLand() {
+    public void testBuyLand2(){
         System.out.println("buyLand");
         int acresToBuy = -5;
         int wheatInStore = 2500;
@@ -292,16 +225,12 @@ import static org.junit.Assert.*;
         int workers = 150;
         int acresOwned = 2000;
         int expResult = -1;
-        int result = buyLand.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
+        int result = CropControl.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
         assertEquals(expResult, result);
     }
 
-}
-//Test #3
-
-
     @Test
-    public void testBuyLand() {
+    public void testBuyLand3() {
         System.out.println("buyLand");
         int acresToBuy = 100;
         int wheatInStore = 20;
@@ -309,14 +238,12 @@ import static org.junit.Assert.*;
         int workers = 100;
         int acresOwned = 2000;
         int expResult = -1;
-        int result = buyLand.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
+        int result = CropControl.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
         assertEquals(expResult, result);
     }
-}
-//Test #4
 
     @Test
-    public void testBuyLand() {
+    public void testBuyLand4() {
         System.out.println("buyLand");
         int acresToBuy = 1;
         int wheatInStore = 1;
@@ -324,16 +251,12 @@ import static org.junit.Assert.*;
         int workers = 10;
         int acresOwned = 0;
         int expResult = 1;
-        int result = buyLand.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
+        int result = CropControl.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
         assertEquals(expResult, result);
     }
 
-}
-//Test #5
-/*
- * Just a series of tests.
- */
-    public void testBuyLand() {
+    @Test
+    public void testBuyLand5() {
         System.out.println("buyLand");
         int acresToBuy = 1000;
         int wheatInStore = 1000;
@@ -341,9 +264,8 @@ import static org.junit.Assert.*;
         int workers = 300;
         int acresOwned = 1000;
         int expResult = 2000;
-        int result = buyLand.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
+        int result = CropControl.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
         assertEquals(expResult, result);
     }
-
 }
 
