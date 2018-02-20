@@ -227,4 +227,50 @@ public class CropControl {
         //return acresOwned
         return acresOwned;
     }
+    
+    
+// The plantCrops method.
+// Purpose: plant the crops.
+// Parameters: the number of acres of land that the player wants to plant.
+// Returns: must return a positive number. Returns the remaining number
+// of wheat in store. If there's an error, return -1.
+// Pre-conditions: number of wheat in store and acres must be enough for 
+// user to plant the crops.
+    
+    public int plantCrops(int acresToPlant,int acresOwned, int wheatInStore, CropData cropData) {
+
+    //If acresToPlant > acresOwned then, return -1
+    int owned = cropData.getAcresOwned();
+    if(acresToPlant > acresOwned)
+        return -1;
+    //Also, if acresToPlant > wheatInStore then, return -1
+        owned = cropData.getWheatInStore();
+        if(acresToPlant > wheatInStore) 
+            return -1;
+    //return acresOwned
+    return acresOwned;
+
+}
+    
+        // The payOffering method.
+    // Purpose: to subtract the value paid from user's storage.
+    // Parameters: the percentage of harvest paid.
+    // Returns: '0' if it's a valid value OR '-1' if it's an invalid value
+    // Pre-conditions: Offering percentage must be between 0 and 100
+    
+    public int payOffering(int wheatInStore, int offeringAmount, CropData cropData) {
+        //If payOffering < 0, then return -1
+        
+        if(cropData.getOffering() < 0)
+            return -1;
+        //If payOffering > 100, then return -1
+        if(cropData.getOffering() > 100)
+            return -1;
+        //wheatInStore - offeringAmount
+        cropData.setOffering(cropData.getWheatInStore() - offeringAmount);
+        
+        //Return wheatInStore
+        return wheatInStore;
+}
+
 }

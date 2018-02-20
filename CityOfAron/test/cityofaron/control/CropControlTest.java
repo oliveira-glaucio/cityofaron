@@ -2,10 +2,12 @@ package cityofaron.control;
 
 
 import cityofaron.model.CropData;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /*
  * @author glaucio
@@ -21,6 +23,14 @@ public class CropControlTest {
     
     @AfterClass
     public static void tearDownClass(){
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
    
@@ -266,6 +276,133 @@ public class CropControlTest {
         int expResult = 2000;
         int result = CropControl.buyLand(acresToBuy, wheatInStore, landPrice, workers, acresOwned);
         assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of calcLandCost method, of class CropControl.
+     */
+    @Test
+    public void testCalcLandCost() {
+        System.out.println("calcLandCost");
+        int expResult = 0;
+        int result = CropControl.calcLandCost();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of randInt method, of class CropControl.
+     */
+    @Test
+    public void testRandInt() {
+        System.out.println("randInt");
+        int min = 0;
+        int max = 0;
+        int expResult = 0;
+        int result = CropControl.randInt(min, max);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of calcEatenByRats method, of class CropControl.
+     */
+    @Test
+    public void testCalcEatenByRats() {
+        System.out.println("calcEatenByRats");
+        int expResult = 0;
+        int result = CropControl.calcEatenByRats();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of growPopulation method, of class CropControl.
+     */
+    @Test
+    public void testGrowPopulation() {
+        System.out.println("growPopulation");
+        int expResult = 0;
+        int result = CropControl.growPopulation();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of calcStarved method, of class CropControl.
+     */
+    @Test
+    public void testCalcStarved() {
+        System.out.println("calcStarved");
+        int expResult = 0;
+        int result = CropControl.calcStarved();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCropData method, of class CropControl.
+     */
+    @Test
+    public void testGetCropData() {
+        System.out.println("getCropData");
+        CropData expResult = null;
+        CropData result = CropControl.getCropData();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setCropData method, of class CropControl.
+     */
+    @Test
+    public void testSetCropData() {
+        System.out.println("setCropData");
+        CropData cropData = null;
+        CropControl.setCropData(cropData);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of plantCrops method, of class CropControl.
+     */
+    @Test
+    public void testPlantCrops() {
+        System.out.println("plantCrops");
+        int acresToPlant = 0;
+        int acresOwned = 0;
+        int wheatInStore = 0;
+        CropData cropData = null;
+        CropControl instance = null;
+        int expResult = 0;
+        int result = instance.plantCrops(acresToPlant, acresOwned, wheatInStore, cropData);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of payOffering method, of class CropControl.
+     */
+    @Test
+    public void testPayOffering() {
+        System.out.println("payOffering");
+        int wheatInStore = 0;
+        int offeringAmount = 0;
+        CropData cropData = null;
+        CropControl instance = null;
+        int expResult = 0;
+        int result = instance.payOffering(wheatInStore, offeringAmount, cropData);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 }
 
