@@ -183,8 +183,9 @@ public class CropControl {
 // Parameters: Wheat Allocated
 // Returns: Wheat Stored.
 // Pre-conditions: Wheat must be positive, and cannot exceed the amount that is stored
-    public static int feedPeople(int wheatInStore, int wheatAllocated) {
+    public static int feedPeople(CropData cropData, int wheatAllocated) {
         // if wheatInStore < 0, return -1
+        int wheatInStore = cropData.getWheatInStore();
         if (wheatInStore < 0) {
             return -1;
         }
@@ -203,7 +204,9 @@ public class CropControl {
 // Parameters: the price of land and the number of acres to buy
 // Returns: the acres of owned land
 // Pre-conditions: acres to buy must be positive, but cannot exceed Bushels Of Wheat that is had at the moment.
-    public static int buyLand(int acresToBuy, int wheatInStore, int landPrice, int workers, int acresOwned) {
+    public static int buyLand(int acresToBuy, CropData cropData, int landPrice, int workers,) {
+        int acresOwned = cropData.getAcresOwned();
+        int wheatInStore = cropData.getWheatInStore();
         //if acresToBuy < 0, return -1
         if (acresToBuy < 0) {
             return -1;
