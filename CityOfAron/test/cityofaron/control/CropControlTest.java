@@ -177,7 +177,7 @@ public class CropControlTest {
         cropData.setWheatInStore(2000);;
         int wheatAllocated = 1000;
         int expResult = 1000;
-        int result = CropControl.feedPeople(CropData cropData, int wheatAllocated);
+        int result = CropControl.feedPeople(CropData cropData, wheatAllocated);
         assertEquals(expResult, result); 
     } 
     
@@ -188,7 +188,7 @@ public class CropControlTest {
         cropData.setWheatInStore(0);
         int wheatAllocated = 1000;
         int expResult = -1;
-        int result = CropControl.feedPeople(CropData cropData, int wheatAllocated);
+        int result = CropControl.feedPeople(CropData cropData, wheatAllocated);
         assertEquals(expResult, result);
     }
 
@@ -199,7 +199,7 @@ public class CropControlTest {
         cropData.setWheatInStore(1000);
         int wheatAllocated = 2000;
         int expResult = -1;
-        int result = CropControl.feedPeople(CropData cropData, int wheatAllocated);
+        int result = CropControl.feedPeople(CropData cropData, wheatAllocated);
         assertEquals(expResult, result);       
     }
     
@@ -210,7 +210,7 @@ public class CropControlTest {
         cropData.setWheatInStore(2000);
         int wheatAllocated = 2000;
         int expResult = 0;
-        int result = CropControl.feedPeople(CropData cropData, int wheatAllocated);
+        int result = CropControl.feedPeople(CropData cropData, wheatAllocated);
         assertEquals(expResult, result);
     }
 
