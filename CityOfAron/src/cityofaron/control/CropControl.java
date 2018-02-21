@@ -204,7 +204,7 @@ public class CropControl {
 // Parameters: the price of land and the number of acres to buy
 // Returns: the acres of owned land
 // Pre-conditions: acres to buy must be positive, but cannot exceed Bushels Of Wheat that is had at the moment.
-    public static int buyLand(int acresToBuy, CropData cropData, int landPrice, int workers,) {
+    public static int buyLand(int acresToBuy, CropData cropData, int landPrice, int workers) {
         int acresOwned = cropData.getAcresOwned();
         int wheatInStore = cropData.getWheatInStore();
         //if acresToBuy < 0, return -1
