@@ -177,7 +177,7 @@ public class CropControlTest {
         cropData.setWheatInStore(2000);;
         int wheatAllocated = 1000;
         int expResult = 1000;
-        int result = CropControl.feedPeople(CropData cropData, int wheatAllocated));
+        int result = CropControl.feedPeople(CropData cropData, int wheatAllocated);
         assertEquals(expResult, result); 
     } 
     
@@ -190,8 +190,6 @@ public class CropControlTest {
         int expResult = -1;
         int result = CropControl.feedPeople(CropData cropData, int wheatAllocated);
         assertEquals(expResult, result);
-        
-        
     }
 
     @Test
@@ -227,7 +225,7 @@ public class CropControlTest {
         int workers = 300;
         theCrops.setAcresOwned (2810);
         int expResult = 2820;
-        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers,);
+        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers);
         assertEquals(expResult, result);
     }
 
@@ -241,7 +239,7 @@ public class CropControlTest {
         int workers = 150;
         theCrops.setAcresOwned (2000);
         int expResult = -1;
-        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers,);
+        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers);
         assertEquals(expResult, result);
     }
 
@@ -255,7 +253,7 @@ public class CropControlTest {
         int workers = 100;
         theCrops.setAcresOwned (2000);
         int expResult = -1;
-        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers,);
+        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers);
         assertEquals(expResult, result);
     }
 
@@ -269,7 +267,7 @@ public class CropControlTest {
         int workers = 10;
         theCrops.setAcresOwned (0);
         int expResult = 1;
-        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers,) {;
+        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers);
         assertEquals(expResult, result);
     }
 
@@ -283,7 +281,7 @@ public class CropControlTest {
         int workers = 300;
         theCrops.setAcresOwned(1000);
         int expResult = 2000;
-        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers,) {;
+        int result = CropControl.buyLand(acresToBuy, CropData cropData, landPrice, workers);
         assertEquals(expResult, result);
     }
 
