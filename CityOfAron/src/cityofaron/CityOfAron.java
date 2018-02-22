@@ -7,68 +7,48 @@ import cityofaron.model.Map;
 import cityofaron.model.Player;
 import cityofaron.model.TeamMember;
 import java.util.ArrayList;
-
+import cityofaron.view.*;
+import java.util.Scanner;
 
 /**
  *
  * @author glaucio
  */
 public class CityOfAron {
+    
+    private static Game theGame = null;
+    private static Player thePlayer = null;
+    Scanner keyboard = new Scanner(System.in);
+    
     public static void main(String[] args) {
-        Game game = new Game();
-        
-        //Team Members
-        TeamMember[] teamMembers = new TeamMember[2];
-        teamMembers[0] = new TeamMember();
-        teamMembers[0].setName("Mariazinha");
-        teamMembers[0].setTitle("Domestica");
-        
-        teamMembers[1] = new TeamMember();
-        teamMembers[1].setName("Pedrinho");
-        teamMembers[1].setTitle("Lavrador");
-        
-                
-        //creation of cropdata
-        CropData cropData = new CropData();
-        cropData.setYear(2018);
-        cropData.setPopulation(1000);
-        
-        //creation of player1
-        Player player1 = new Player();
-        player1.setName("Joãozinho da Silva");
+        CityOfAron city = new CityOfAron();
+        city.startNewGame();
+    }
 
-        //creation of the map
-        Map map = new Map();         
-        map.setColCount(300);
-        map.setRowCount(200);
+    public void startNewGame() {
         
+        theGame = new Game();
+        thePlayer = new Player();
         
-        //Defining Animals
-        ArrayList<ListItem> animals = new ArrayList<>();
-        animals.add(new ListItem("Dog",1));
-        animals.add(new ListItem("Cat",2));       
-                
-        //Defining Tools
-        ArrayList<ListItem> tools = new ArrayList<>();
-        tools.add(new ListItem("Axe",12));
-        tools.add(new ListItem("Shovel",2));       
-           
+         // Display the Banner Page.
+        System.out.println("\nWelcome to the city of Aaron.");
+    
+        // Prompt for and get the user’s name.
+        String name;
+        System.out.println("\nPlease type in your first name: ");
+        name = keyboard.next();
+
+        // Save the user’s name in the Player object
+        thePlayer.setName(name);
+
+        // Save a reference to the player object in the Game object
+        theGame.setThePlayer(thePlayer);
+
+        // Display a welcome message
+        System.out.println("\nWelcome “ + name + “ have fun.");
         
-        
-        //assigning the play and the map to the game...
-        game.setThePlayer(player1);
-        game.setTheMap(map);
-        game.setCropData(cropData);
-        game.setTeam(teamMembers);
-        game.setAnimals(animals);
-        game.setTools(tools);
-        
-        //printing out the classes values        
-        System.out.println(game.toString());
-        System.out.println(cropData.toString());
-        System.out.println(animals.toString());
-        System.out.println(tools.toString());
-        System.out.println(map.toString());
-        System.out.println(player1.toString());        
-    }       
+        // Display the Game menu
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
+ }
 }
