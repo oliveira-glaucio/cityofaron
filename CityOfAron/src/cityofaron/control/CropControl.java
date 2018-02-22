@@ -151,22 +151,22 @@ public class CropControl {
 //Pre-conditions: people in the city must be positive; 
     public static int calcStarved() {
 
-//peopleAdequatelyFed = wheatSeparatedForFood * 20
+        //peopleAdequatelyFed = wheatSeparatedForFood * 20
         int peopleFed = cropData.getWheatForPeople() * 20;
 
-//peopleStarved = 0
+        //peopleStarved = 0
         int peopleStarved = 0;
 
-//if peopleAdequatelyFed < populationInCity
-//   peopleStarved = populationInCity – peopleAdequatelyFed
-//   populationInCity = populationInCity – peopleStarved
+        //if peopleAdequatelyFed < populationInCity
+        //   peopleStarved = populationInCity – peopleAdequatelyFed
+        //   populationInCity = populationInCity – peopleStarved
         if (peopleFed < cropData.getPopulation()) {
             peopleStarved = cropData.getPopulation() - peopleFed;
         }
 
         cropData.setPopulation(cropData.getPopulation() - peopleStarved);
 
-//return peopleStarved 
+        //return peopleStarved 
         return peopleStarved;
     }
 
@@ -255,7 +255,7 @@ public class CropControl {
 
 }
     
-        // The payOffering method.
+    // The payOffering method.
     // Purpose: to subtract the value paid from user's storage.
     // Parameters: the percentage of harvest paid.
     // Returns: '0' if it's a valid value OR '-1' if it's an invalid value

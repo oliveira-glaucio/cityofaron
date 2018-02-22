@@ -1,5 +1,6 @@
 package cityofaron.view;
 
+import cityofaron.model.Game;
 import java.util.Scanner;
 import cityofaron.model.Player;
 
@@ -9,17 +10,19 @@ import cityofaron.model.Player;
 // Date last modified: February 2018
 //-------------------------------------------------------------
 public class MainMenuView {
-
+    private static Game theGame = null;
+    private static Player thePlayer = null;
     private String mainMenu;
     private int max;
 
     Scanner keyboard = new Scanner(System.in);
+    
+    
     // The MainMenuView constructor
     // Purpose: Initialize the menu data
     // Parameters: none
     // Returns: none
     // ===================================
-
     public MainMenuView() {
         mainMenu = "\n"
                 + "**********************************\n"
@@ -30,16 +33,16 @@ public class MainMenuView {
                 + " 3 - Get help on playing the game\n"
                 + " 4 - Save game\n"
                 + " 5 - Quit\n";
-
         max = 5;
     }
+    
+    
     // The displayMenuView method
     // Purpose: displays the menu, gets the user's input, and does the 
-    //               selected action
+    // selected action
     // Parameters: none
     // Returns: none
     // =========================================================
-
     public void displayMenuView() {
         int menuOption;
         do {
@@ -56,6 +59,8 @@ public class MainMenuView {
         } while (menuOption != max);
     }
 
+    
+    
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
@@ -80,14 +85,39 @@ public class MainMenuView {
         }
     }
 
+    
+    
     // The startNewGame method
     // Purpose: creates game object and starts the game
     // Parameters: none
     // Returns: none
     // ===================================     
     public void startNewGame() {
-        System.out.println("\nStart new game option selected.");
-    }
+        
+        theGame = new Game();
+        thePlayer = new Player();
+        
+         // Display the Banner Page.
+        System.out.println("\nWelcome to the city of Aaron.");
+    
+        // Prompt for and get the user’s name.
+        String name;
+        System.out.println("\nPlease type in your first name: ");
+        name = keyboard.next();
+
+        // Save the user's name in the Player object
+        thePlayer.setName(name);
+
+        // Save a reference to the player object in the Game object
+        theGame.setThePlayer(thePlayer);
+
+        // Display a welcome message
+        System.out.println("\nWelcome " + name + " have fun.");
+        
+        // Display the Game menu
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
+ }
 
     public void startSavedGame() {
         System.out.println("\nStart saved Game.");
@@ -101,7 +131,9 @@ public class MainMenuView {
         System.out.println("\nSave game.");
     }
 
-    // The getMenuOption method
+    
+    
+// The getMenuOption method
 // Purpose: gets the user's input
 // Parameters: none
 // Returns: integer - the option selected
@@ -126,6 +158,5 @@ public class MainMenuView {
         // return the value input by the user
         return userInput;
     }
-
-
+        
 }
