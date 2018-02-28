@@ -28,12 +28,12 @@ public class HelpMenuView {
                 + "**********************************\n"
                 + "* CITY OF AARON: Help Menu  *\n"
                 + "**********************************\n"
-                + " 1 - Option #1"
-                + " 2 - Option #2n"
-                + " 3 - Option #3n"
-                + " 4 - Option #4\n"
-                + " 5 - Option #5\n"
-                + " 6 - Menu\n";
+                + " 1 - What are the goals of the game?\n"
+                + " 2 - Where is the city of Aaron?\n"
+                + " 3 - How do I view the map?\n"
+                + " 4 - How do I move to another location?\n"
+                + " 5 - How do I display a list of animals, provisions and tools in the city storehouse?"
+                + " 6 - Back to the Main Menu.\n";
         max = 6;
     }
   }
@@ -59,33 +59,108 @@ public class HelpMenuView {
             // Determine and display the next view
         } while (menuOption != max);
     }
-     //The doAction method
-      //Purpose: performs the selection action
-      //Parameters: none
-      //Returns: none
 
-  public void doAction(int option){
-    switch (option) {
-        //if the option is 1
-      case 1: System.out.println("\n Message #1.");
-        break;
-        //if the option is 2
-      case 2: System.out.println("\n Message #2.");
-        break;
-        //if the option is 3
-      case 3: System.out.println("\n Message #3.");
-        break;
-        //if the option is 4
-      case 4: System.out.println("\n Message #4.");
-        break;
-        //if option is 5, 
-      case 5: System.out.println("\n Message #5.");
-        break;
-        //if option is 6, return to Main Menu
-      case 6: System.out.println("\n Message #6.");
-          MainMenuView mainMenuView = new MainMenuView();
-          mainMenuView.displayMenuView();
+// The getMenuOption method
+// Purpose: gets the user's input
+// Parameters: none
+// Returns: integer - the option selected
+// ===================================       
+    public int getMenuOption() {
+        // declare a variable to hold user’s input
+        int userInput;
+
+        // begin loop
+        do {
+            // get user input from the keyboard
+            userInput = keyboard.nextInt();
+
+            // if it is not a valid value, output an error message
+            if (userInput < 1 || userInput > max) {
+                System.out.println("\noption must be between 1 and " + max);
+            }
+
+            // go back to the top of the loop if input was not valid
+        } while (userInput < 1 || userInput > max);
+
+        // return the value input by the user
+        return userInput;
+    }
+        
+    // The doAction method
+    // Purpose: performs the selected action
+    // Parameters: none
+    // Returns: none
+    // ===================================       
+    public void doAction(int option)
+    {
+        switch(option) {
+            case 1: // display goals of the game
+                displayHelpGoalsOfGame();
                 break;
+            case 2: // display where the city of Aaron is
+                displayHelpWhere();
+                break;
+            case 3: // display how view map
+                displayHelpViewMap();
+                break;
+            case 4: // display how to move to another location
+                displayHelpMoveLocation();
+                break;
+            case 5: // display animals, provisions, and tools in storehouse
+                displayHelpWhatInStorehouse();
+                break;
+            case 6: // back to main menu
+                break;
+        }
+ 
+
+    
+    }
+    // The displayHelpGoalsOfGame method
+    // Purpose: displays the goals of the game
+    // Parameters: none
+    // Returns: none
+    // ===================================   
+    public void displayHelpGoalsOfGame()
+    {
+        System.out.println("\nGoals of the Game was Selected.");
+    }
+    // The displayHelpWhere method
+    // Purpose: displays where the city of Aaron is loacted
+    // Parameters: none
+    // Returns: none
+    // ===================================   
+    public void displayHelpWhere()
+    {
+        System.out.println("\nWhere is the City of Aaron was Selected.");
+    }
+    // The displayHelpViewMap method
+    // Purpose: displays the goals of the game
+    // Parameters: none
+    // Returns: none
+    // ===================================   
+    public void displayHelpViewMap()
+    {
+        System.out.println("\nHow do I view the map was Selected.");
+    }
+    // The displayHelpMoveLocation method
+    // Purpose: explains how to move to another location
+    // Parameters: none
+    // Returns: none
+    // ===================================   
+    public void displayHelpMoveLocation()
+    {
+        System.out.println("\nHow to move to another location was Selected.");
+    }
+    // The displayHelpWhatInStorehouse method
+    // Purpose: shows a list of the animals, provisions, and tools that are in
+    //          the storehouse.
+    // Parameters: none
+    // Returns: none
+    // ===================================   
+    public void displayHelpWhatInStorehouse()
+    {
+        System.out.println("\nList Animals, Provisions, and Tools was Selected.");
     }
   }
 }
