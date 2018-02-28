@@ -1,10 +1,10 @@
-package cityofaron.view;
+    package cityofaron.view;
 
 import cityofaron.model.Game;
 import java.util.Scanner;
 import cityofaron.model.Player;
 
-// The feedPeopleView class - part of the view layer
+// The HelpMenuView class - part of the view layer
 // Object of this class manage the feed people menu
 // Author: Arunas
 // Date last modified: February 2018
@@ -18,13 +18,13 @@ public class feedPeopleView {
     Scanner keyboard = new Scanner(System.in);
     
     
-    // The MainMenuView constructor
-    // Purpose: Initialize the menu data
+    // The HelpMenuView constructor
+    // Purpose: Initialize the feed people data
     // Parameters: none
     // Returns: none
     // ===================================
-    public MainMenuView() {
-        mainMenu = "\n"
+    public HelpMenuView() {
+        helpMenu = "\n"
                 + "**********************************\n"
                 + "* CITY OF AARON: Feed People Menu  *\n"
                 + "**********************************\n"
@@ -59,10 +59,11 @@ public class feedPeopleView {
             // Determine and display the next view
         } while (menuOption != max);
     }
-     //The doAction method
+      //The doAction method
       //Purpose: performs the selection action
       //Parameters: none
       //Returns: none
+      // =========================================================
 
   public void doAction(int option){
     switch (option) {
