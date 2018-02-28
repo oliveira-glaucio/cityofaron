@@ -26,7 +26,7 @@ public class HelpMenuView {
     public HelpMenuView() {
         helpMenu = "\n"
                 + "**********************************\n"
-                + "* CITY OF AARON: Feed People Menu  *\n"
+                + "* CITY OF AARON: Help Menu  *\n"
                 + "**********************************\n"
                 + " 1 - Option #1"
                 + " 2 - Option #2n"
@@ -38,7 +38,7 @@ public class HelpMenuView {
     }
   }
 
-    // The feedPeopleView method
+    // The displayMenuView method
     // Purpose: displays the menu, gets the user's input, and does the 
     // selected action
     // Parameters: none
@@ -66,16 +66,16 @@ public class HelpMenuView {
 
   public void doAction(int option){
     switch (option) {
-        //if the option is 1, call startNewGame()
+        //if the option is 1
       case 1: System.out.println("\n Message #1.");
         break;
-        //if the option is 2, call startExistingGame()
+        //if the option is 2
       case 2: System.out.println("\n Message #2.");
         break;
-        //if the option is 3, call displayHelpMenu()
+        //if the option is 3
       case 3: System.out.println("\n Message #3.");
         break;
-        //if the option is 4, call displaySaveGame()
+        //if the option is 4
       case 4: System.out.println("\n Message #4.");
         break;
         //if option is 5, 
