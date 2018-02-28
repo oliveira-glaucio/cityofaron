@@ -5,12 +5,12 @@ import cityofaron.model.Game;
 import java.util.Scanner;
 import cityofaron.model.Player;
 
-// The MainMenuView class - part of the view layer
-// Object of this class manage the main menu
+// The feedPeopleView class - part of the view layer
+// Object of this class manage the feed people menu
 // Author: Arunas
 // Date last modified: February 2018
 //-------------------------------------------------------------
-public class MainMenuView {
+public class feedPeopleView {
     private static Game theGame = null;
     private static Player thePlayer = null;
     private String mainMenu;
@@ -27,7 +27,7 @@ public class MainMenuView {
     public MainMenuView() {
         mainMenu = "\n"
                 + "**********************************\n"
-                + "* CITY OF AARON: MAIN GAME MENU  *\n"
+                + "* CITY OF AARON: Feed People Menu  *\n"
                 + "**********************************\n"
                 + " 1 - Start new game\n"
                 + " 2 - Get and start a saved game\n"
