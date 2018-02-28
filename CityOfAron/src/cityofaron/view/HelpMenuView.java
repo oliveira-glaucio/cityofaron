@@ -10,7 +10,7 @@ import cityofaron.model.Player;
 // Author: Arunas
 // Date last modified: February 2018
 //-------------------------------------------------------------
-public class MainMenuView {
+public class HelpMenuView {
     private static Game theGame = null;
     private static Player thePlayer = null;
     private String mainMenu;
@@ -24,8 +24,8 @@ public class MainMenuView {
     // Parameters: none
     // Returns: none
     // ===================================
-    public MainMenuView() {
-        mainMenu = "\n"
+    public HelpMenuView() {
+        helpMenu = "\n"
                 + "**********************************\n"
                 + "* CITY OF AARON: GAME HELP MENIU  *\n"
                 + "**********************************\n"
@@ -48,7 +48,7 @@ public class MainMenuView {
         int menuOption;
         do {
             // Display the menu
-            System.out.println(mainMenu);
+            System.out.println(helpMenu);
 
             // Prompt the user and get the user’s input
             menuOption = getMenuOption();
