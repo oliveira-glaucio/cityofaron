@@ -6,7 +6,7 @@ import java.util.Scanner;
 import cityofaron.model.Player;
 
 // The HelpMenuView class - part of the view layer
-// Object of this class manage the main menu
+// Object of this class manage the help menu
 // Author: Arunas
 // Date last modified: February 2018
 //-------------------------------------------------------------
@@ -20,7 +20,7 @@ public class HelpMenuView {
     
     
     // The HelpMenuView constructor
-    // Purpose: Initialize the menu data
+    // Purpose: Initialize the help menu data
     // Parameters: none
     // Returns: none
     // ===================================
