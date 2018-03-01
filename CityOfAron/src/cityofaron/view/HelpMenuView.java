@@ -95,19 +95,19 @@ public class HelpMenuView {
     {
         switch(option) {
             case 1: // display goals of the game
-                displayHelpGoalsOfGame();
+                displayGameGoals();
                 break;
             case 2: // display where the city of Aaron is
-                displayHelpWhere();
+                displayLocation();
                 break;
             case 3: // display how view map
-                displayHelpViewMap();
+                displayMap();
                 break;
             case 4: // display how to move to another location
-                displayHelpMoveLocation();
+                displayLocation();
                 break;
             case 5: // display animals, provisions, and tools in storehouse
-                displayHelpWhatInStorehouse();
+                displayWheatInStore();
                 break;
             case 6: // back to main menu
                 break;
@@ -121,46 +121,45 @@ public class HelpMenuView {
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayHelpGoalsOfGame()
+    public void displayGameGoals()
     {
-        System.out.println("\nGoals of the Game was Selected.");
+        System.out.println("*Game goals*");
     }
     // The displayHelpWhere method
     // Purpose: displays where the city of Aaron is loacted
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayHelpWhere()
+    public void displayLocation()
     {
-        System.out.println("\nWhere is the City of Aaron was Selected.");
+        System.out.println("*Location*");
     }
     // The displayHelpViewMap method
     // Purpose: displays the goals of the game
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayHelpViewMap()
+    public void displayMap()
     {
-        System.out.println("\nHow do I view the map was Selected.");
+        System.out.println("*Map*");
     }
     // The displayHelpMoveLocation method
     // Purpose: explains how to move to another location
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayHelpMoveLocation()
+    public void displayLocation()
     {
-        System.out.println("\nHow to move to another location was Selected.");
+        System.out.println("*Move to another location*.");
     }
     // The displayHelpWhatInStorehouse method
-    // Purpose: shows a list of the animals, provisions, and tools that are in
-    //          the storehouse.
+    // Purpose: Shows resources
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayHelpWhatInStorehouse()
+    public void displayWheatInStore()
     {
-        System.out.println("\nList Animals, Provisions, and Tools was Selected.");
+        System.out.println("*Animals, Provisions, and Tools*.");
     }
   }
 }
