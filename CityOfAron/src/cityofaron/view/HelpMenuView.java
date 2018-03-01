@@ -104,7 +104,7 @@ public class HelpMenuView {
                 displayMap();
                 break;
             case 4: // display how to move to another location
-                displayLocation();
+                displayMove();
                 break;
             case 5: // display animals, provisions, and tools in storehouse
                 displayWheatInStore();
@@ -148,7 +148,7 @@ public class HelpMenuView {
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayLocation()
+    public void displayMove()
     {
         System.out.println("*Move to another location*.");
     }
