@@ -17,10 +17,19 @@ import java.util.Scanner;
 public class CityOfAron {
 
     Scanner keyboard = new Scanner(System.in);
+
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CityOfAron.theGame = theGame;
+    }
+    private static Game theGame;
     
     public static void main(String[] args) {    
         MainMenuView mmv = new MainMenuView();
-        
+
         mmv.startNewGame();
     }
 }

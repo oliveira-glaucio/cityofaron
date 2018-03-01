@@ -93,8 +93,7 @@ public class MainMenuView {
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void startNewGame() {
-        
+    public void startNewGame() {          
         CropData cropData = createCropData();
         
         theGame = new Game();
@@ -121,9 +120,9 @@ public class MainMenuView {
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
         
-        // Display the Game menu
-        MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();
+        // Display the Game menu      
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenuView();
  }
 
     public void startSavedGame() {

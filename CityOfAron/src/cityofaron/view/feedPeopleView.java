@@ -10,7 +10,7 @@ import cityofaron.model.Player;
 // Date last modified: February 2018
 //-------------------------------------------------------------
 public class feedPeopleView {
-    
+/*    
     
     private static Game theGame = null;
     private static Player thePlayer = null;
@@ -92,5 +92,5 @@ public class feedPeopleView {
     }
   }
 
-
+*/
 }

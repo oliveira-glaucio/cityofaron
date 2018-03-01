@@ -20,44 +20,78 @@ public class CropView {
  
     
     // Get reference to the Game object and the Crops object
-    private static Game theGame = DeBryGameProject.getCurrentGame();
+    private static Game theGame = cityofaron.CityOfAron.getTheGame();
     private static CropData theCropData = theGame.getCropData();
-
     
-     // The buyLandView method
- // Purpose: interface with the user input for buying land
+    
+// The buyLandView method
+// Purpose: interface with the user input for buying land
 // Parameters: none
- // Returns: none
+// Returns: none
  public static void buyLandView()
  {
      // Get the cost of land for this round.
-     int price = CropDataControl.calcLandCost();
+     int price = CropControl.calcLandCost();
 
      // Prompt the user to enter the number of acres to buy
-     System.out.format("Land is selling for %d bushels per acre.%n",price);
+     System.out.format("Land is selling for %d bushels per acre.%n", price);
      System.out.print("\nHow many acres of land do you wish to buy? "); 
 
     //  Get the user’s input and save it.
     int toBuy;
     toBuy = keyboard.nextInt();
-
-    // Call the buyLand( ) method in the control layer to buy the land
-    CropDataControl.buyLand(toBuy, price);
     
+    
+    
+    CropControl.buyLand(toBuy, theCropData, price, 0);       
 }
  
  
+ public static void sellLandView()
+ {
+     // Prompt the user to enter the number of acres to sell
+     System.out.print("\nHow many acres of new land do you want to sell? "); 
+
+    // Get the user’s input and save it.
+    int toSell = 0, typedValue = 0;
+    Boolean validInput = false;
+    
+    //Wait for a valid and positive input
+    while(!validInput)
+    {
+        validInput = keyboard.hasNextInt();
+        
+        if(validInput == true){
+            typedValue = keyboard.nextInt();
+            
+            if(typedValue <= 0) 
+            {
+                System.out.print("\nPlease type a positive number."); 
+                validInput = false;
+            }
+            else if (CropControl.getCropData().getAcresOwned() > typedValue){
+               System.out.print("\nYou don't have all this land to sell. Type a smaller number."); 
+               validInput = false;
+            }
+        }
+    }
+    
+    toSell = typedValue;
+    
+    CropControl.sellLand(0, toSell, theCropData);   
+ }
+ 
+ 
 // The runCropsView method()
-// Purpose: runs the Hamurabi game
+// Purpose: runs the City of Aron Game
 // Parameters: none
 // Returns: none
 public static void runCropsView()
 {
-    // call the buyLandView( ) method
     buyLandView();
 
-    // add calls to the other crop view methods
-    // as they are written
+    sellLandView();
+
 }
 
 

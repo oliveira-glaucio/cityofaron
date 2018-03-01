@@ -10,7 +10,7 @@ import cityofaron.model.Player;
 // Date last modified: February 2018
 //-------------------------------------------------------------
 public class HelpMenuView {
-    private static Game theGame = null;
+/*    private static Game theGame = null;
     private static Player thePlayer = null;
     private String mainMenu;
     private int max;
@@ -162,4 +162,5 @@ public class HelpMenuView {
         System.out.println("*Animals, Provisions, and Tools*.");
     }
   }
+*/
 }
