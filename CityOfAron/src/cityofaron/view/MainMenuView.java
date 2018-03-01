@@ -1,5 +1,6 @@
 package cityofaron.view;
 
+import cityofaron.model.CropData;
 import cityofaron.model.Game;
 import java.util.Scanner;
 import cityofaron.model.Player;
@@ -94,6 +95,8 @@ public class MainMenuView {
     // ===================================     
     public void startNewGame() {
         
+        CropData cropData = createCropData();
+        
         theGame = new Game();
         thePlayer = new Player();
         
@@ -111,6 +114,10 @@ public class MainMenuView {
         // Save a reference to the player object in the Game object
         theGame.setThePlayer(thePlayer);
 
+        // Save a reference of a new cropData;
+        theGame.setCropData(cropData);
+        
+        
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
         
@@ -157,6 +164,26 @@ public class MainMenuView {
 
         // return the value input by the user
         return userInput;
+    }
+
+    private CropData createCropData() {
+        //Create the CropData object, 
+        // initialize it and save a reference to it in the Game
+        CropData theCrops = new CropData();
+        theCrops.setYear(0);
+        theCrops.setPopulation(100);
+        theCrops.setNewPeople(5);
+        theCrops.setCropYield(3);
+        theCrops.setNumberWhoDied(0);
+        theCrops.setOffering(10);
+        theCrops.setWheatInStore(2700);
+        theCrops.setAcresOwned(1000);
+        theCrops.setAcresPlanted(1000);
+        theCrops.setHarvest(3000);
+        theCrops.setOfferingBushels(300);
+        theCrops.setAcresPlanted(1000); 
+        
+        return theCrops;
     }
         
 }

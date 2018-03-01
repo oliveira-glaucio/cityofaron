@@ -10,6 +10,8 @@ import cityofaron.model.Player;
 // Date last modified: February 2018
 //-------------------------------------------------------------
 public class feedPeopleView {
+    
+    
     private static Game theGame = null;
     private static Player thePlayer = null;
     private String mainMenu;
@@ -26,7 +28,7 @@ public class feedPeopleView {
     public HelpMenuView() {
         helpMenu = "\n"
                 + "**********************************\n"
-                + "* CITY OF AARON: Feed People Menu  *\n"
+                + "* CITY OF AARON: Help Menu  *\n"
                 + "**********************************\n"
                 + " 1 - Option #1"
                 + " 2 - Option #2n"
@@ -89,4 +91,6 @@ public class feedPeopleView {
                 break;
     }
   }
+
+
 }
