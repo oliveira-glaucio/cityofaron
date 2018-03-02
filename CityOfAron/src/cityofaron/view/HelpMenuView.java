@@ -10,11 +10,8 @@ import cityofaron.model.Player;
 // Date last modified: February 2018
 //-------------------------------------------------------------
 public class HelpMenuView {
-/*    private static Game theGame = null;
-    private static Player thePlayer = null;
-    private String mainMenu;
+    private String helpMenu;
     private int max;
-
     Scanner keyboard = new Scanner(System.in);
     
     
@@ -36,7 +33,6 @@ public class HelpMenuView {
                 + " 6 - Back to the Main Menu.\n";
         max = 6;
     }
-  }
 
     // The displayMenuView method
     // Purpose: displays the menu, gets the user's input, and does the 
@@ -45,19 +41,16 @@ public class HelpMenuView {
     // Returns: none
     // =========================================================
     public void displayMenuView() {
-        int menuOption;
+        int helpMenuOption;
         do {
             // Display the menu
-            System.out.println(mainMenu);
-
+            System.out.println(helpMenu);
             // Prompt the user and get the user’s input
-            menuOption = getMenuOption();
-
+            helpMenuOption = getHelpMenuOption();
             // Perform the desired action
-            doAction(menuOption);
-
+            doAction(helpMenuOption);
             // Determine and display the next view
-        } while (menuOption != max);
+        } while (helpMenuOption != max);
     }
 
 // The getMenuOption method
@@ -65,7 +58,7 @@ public class HelpMenuView {
 // Parameters: none
 // Returns: integer - the option selected
 // ===================================       
-    public int getMenuOption() {
+    public int getHelpMenuOption() {
         // declare a variable to hold user’s input
         int userInput;
 
@@ -75,13 +68,13 @@ public class HelpMenuView {
             userInput = keyboard.nextInt();
 
             // if it is not a valid value, output an error message
-            if (userInput < 1 || userInput > max) {
+            if (userInput < 1 || userInput > max) 
+            {
                 System.out.println("\noption must be between 1 and " + max);
             }
 
             // go back to the top of the loop if input was not valid
         } while (userInput < 1 || userInput > max);
-
         // return the value input by the user
         return userInput;
     }
@@ -100,14 +93,14 @@ public class HelpMenuView {
             case 2: // display where the city of Aaron is
                 displayLocation();
                 break;
-            case 3: // display how view map
-                displayMap();
+            case 3: // display how to view map
+                displayMapHelp();
                 break;
             case 4: // display how to move to another location
-                displayMove();
+                displayMoveHelp();
                 break;
             case 5: // display animals, provisions, and tools in storehouse
-                displayWheatInStore();
+                displayResources();
                 break;
             case 6: // back to main menu
                 break;
@@ -116,7 +109,7 @@ public class HelpMenuView {
 
     
     }
-    // The displayHelpGoalsOfGame method
+    // The displayGameGoals method
     // Purpose: displays the goals of the game
     // Parameters: none
     // Returns: none
@@ -125,7 +118,7 @@ public class HelpMenuView {
     {
         System.out.println("*Game goals*");
     }
-    // The displayHelpWhere method
+    // The displayLocation method
     // Purpose: displays where the city of Aaron is loacted
     // Parameters: none
     // Returns: none
@@ -139,16 +132,16 @@ public class HelpMenuView {
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayMap()
+    public void displayMapHelp()
     {
-        System.out.println("*Map*");
+        System.out.println("*How to view the Map*");
     }
     // The displayHelpMoveLocation method
     // Purpose: explains how to move to another location
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayMove()
+    public void displayMoveHelp()
     {
         System.out.println("*Move to another location*.");
     }
@@ -157,10 +150,8 @@ public class HelpMenuView {
     // Parameters: none
     // Returns: none
     // ===================================   
-    public void displayWheatInStore()
+    public void displayResources()
     {
         System.out.println("*Animals, Provisions, and Tools*.");
     }
   }
-*/
-}
