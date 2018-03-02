@@ -86,11 +86,11 @@ public class CropView {
 // Returns: none
 //Author: Arunas Rancevas
    //Please advice how to make this work 100 %?
-   /*
+   
    public static void feedPeopleView()
    {
        // Get wheat in store for this round.
-       int wheatInStore = CropControl.WheatInStore();
+       //int wheatInStore = CropControl.WheatInStore();
 
        // Prompt the user to enter the number of wheat to allocate
        System.out.print("\nHow many bushels of grain do you want to give to the people? "); 
@@ -118,7 +118,6 @@ public class CropView {
               validInput = false;
            }
 }
-*/
  
 // The runCropsView method()
 // Purpose: runs the City of Aron Game
