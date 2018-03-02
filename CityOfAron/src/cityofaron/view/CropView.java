@@ -113,7 +113,7 @@ public class CropView {
                System.out.print("\nPlease type a positive number."); 
                validInput = false;
            }
-           else if (CropControl.getCropData().getWheatInStore() > typedValue){
+           else if (theCropData.getWheatInStore() > typedValue){
               System.out.print("\nYou don't have all this wheat to alocate. Type a smaller number."); 
               validInput = false;
            }
