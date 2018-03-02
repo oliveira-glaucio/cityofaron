@@ -98,7 +98,7 @@ public class CropView {
        //  Get the user’s input and save it.
        int toFeed ,typedValue;
        toFeed = keyboard.nextInt();
-           Boolean validInput = false;
+       Boolean validInput = false;
    
          //Wait for a valid and positive input
         while(!validInput)
@@ -118,6 +118,7 @@ public class CropView {
               validInput = false;
            }
 }
+  }
  
 // The runCropsView method()
 // Purpose: runs the City of Aron Game
