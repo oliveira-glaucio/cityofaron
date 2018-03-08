@@ -30,6 +30,6 @@ public class CityOfAron {
     public static void main(String[] args) {    
         MainMenuView mmv = new MainMenuView();
 
-        mmv.startNewGame();
+        mmv.displayMenu();
     }
 }
