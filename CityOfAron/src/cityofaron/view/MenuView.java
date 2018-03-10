@@ -1,56 +1,90 @@
-//abstract super class for all menu views
-package byu.cit260.cityOfAaron.view;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cityofaron;
 
+import cityofaron.Interface.viewInterface;
 import java.util.Scanner;
 
-public abstract class MenuView implements ViewInterface{
 
-  //declare all variables common to all menu views
-  protected final static Scanner keyboard = new Scanner(System.in);
-  protected String menu; //this string holds the menu string
-  protected int max;
+/**
+ *
+ * @author Team
+ */
+public class MenuView implements viewInterface {
+    
+    // the data members common to all menu views
+    protected final static Scanner keyboard = new Scanner(System.in);
+        
+    protected String menu;  // this string holds the menu string
+    protected int max; // this int holds the max input value
 
-  //MenuView constructor
-  //Purpose: Initialize the view object with the menu string
-  //Parameters: the menu string and the max value
-  //Returns: none
-  public MenuView(String _menu, int _max){
-      menu = _menu;
-      max = _max;
-  }
-@Override public void displayMenu(){
-    int menuOption = 0;
-    do{
-      //display the menu
-      System.out.println(menu);
-      //get user selection
-      menuOption = getMenuOption();
-      //perform action
-      doAction(menuOption);
-      //determine and display next view
-      } while (menuOption != max);
+    
+    
+    // MenuView Constructor
+    // Purpose: Initialize the view object with the menu string
+    // Parameters: the menu string and the max value
+    // Returns: none
+    public MenuView(String _menu, int _max)
+    {
+        menu = _menu;
+        max = _max;
+    }
 
-  }
+    
+    
+    // The displayMenu method
+    // Purpose: displays the menu, gets the user's input, and does the 
+    //  selected action
+    // Parameters: none
+    // Returns: none
+    // ===================================    
+    @Override public void displayMenu()
+    {
+        // execute this loop as long as the selected option is not max
+        int menuOption = 0;
+        do
+        {
+            // display the menu
+            System.out.println(menu);
+        
+            // get the user's selection
+            menuOption = getMenuOption();
+        
+            // perform the selected action
+            doAction(menuOption);  
+        } while (menuOption != max);
+    } 
 
-//The getUserInput method
-//Purpose: gets user input, make sure it is within range
-//Parameters: none
-//Returns: the user input, between 1 and max value
-@Override public int getMenuOption(){
-    //declare variable to hold user input
-    int inputValue =0;
-    //begin loop
-    do{
-      //get user input from keyboard
-      System.out.format("\nPlease enter an option(1-%d):",max);
-      inputValue = keyboard.nextInt();
-      //if invalid input, output error message
-      if(inputValue < 1 || inputValue > max){
-        System.out.println("\n Option must be between 1 and " + max);
-        }
-        //loop back to top if input invalid
-      }while(inputValue < 1 || inputValue > max);
-      //return the value input by the user
-    return inputValue;
-  }
+    
+
+    // The getUserInput method
+    // Purpose: gets user input, makes sure it is within range
+    // Parameters: none
+    // Returns: the user input, between 1 and maxValue 
+    @Override public int getMenuOption()
+    {
+        int inputValue = 0;
+        do
+        {
+          System.out.format("\nPlease enter an option(1 - %d):", max);
+          inputValue = keyboard.nextInt();
+          if(inputValue < 1 || inputValue > max)
+          {
+              System.out.format("\nError: input value must be between 1 and %d.", max);
+          }
+        } while(inputValue < 1 || inputValue > max);
+        
+        return inputValue;
+    } 
+
+
+    @Override
+    public void doAction(int option) {
+        throw new UnsupportedOperationException("This method need to be implemented on the children class.");
+    }
+
+    
 }
