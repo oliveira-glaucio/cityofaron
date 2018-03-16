@@ -6,6 +6,9 @@
 package cityofaron.view;
 
 import cityofaron.MenuView;
+import cityofaron.model.Game;
+import cityofaron.model.ListItem;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,6 +16,7 @@ import cityofaron.MenuView;
  */
 public class ListView extends MenuView {
     
+private static Game theGame = cityofaron.CityOfAron.getTheGame();
     
     public ListView() {
         super("\n" +
@@ -63,16 +67,40 @@ public class ListView extends MenuView {
     
     public void viewListOfAnimals()
     {
-        System.out.println("*Location*");
+        System.out.println("List of Animals inside the game:\n\n");        
+        ArrayList<ListItem> listOfAnimals = theGame.getAnimals();
+        
+        for(int i = 0; i < listOfAnimals.size(); i++ )
+        {
+            ListItem currentAnimal = listOfAnimals.get(i);  
+            System.out.println("Animal: " + currentAnimal.getName() + ", Worth: " + currentAnimal.getNumber() + " \n");
+        }    
     }
+
 
     public void viewListOfTools()
     {
-        System.out.println("*Location*");
+        System.out.println("List of Tools inside the game:\n\n");        
+        ArrayList<ListItem> listOfTools = theGame.getTools();
+        
+        for(int i = 0; i < listOfTools.size(); i++ )
+        {
+            ListItem currentTool = listOfTools.get(i);  
+            System.out.println("Tool: " + currentTool.getName() + ", Worth: " + currentTool.getNumber() + " \n");
+        }       
     }
+
 
     public void viewListOfProvisions()
     {
-        System.out.println("*Location*");
-    }    
+        System.out.println("List of Provisions inside the game:\n\n");        
+        ArrayList<ListItem> listOfProvisions = theGame.getProvisions();
+        
+        for(int i = 0; i < listOfProvisions.size(); i++ )
+        {
+            ListItem currentProvision = listOfProvisions.get(i);  
+            System.out.println("Provision: " + currentProvision.getName() + ", Worth: " + currentProvision.getNumber() + " \n");
+        }      
+    }
+
 }
