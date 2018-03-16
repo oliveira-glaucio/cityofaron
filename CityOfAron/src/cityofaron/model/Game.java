@@ -8,13 +8,14 @@ import java.util.ArrayList;
  * @author glaucio
  */
 public class Game implements Serializable{
+    
     private Map theMap;
     private Player thePlayer;
     private CropData cropData;
     private TeamMember[] team;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
-    private ListItem provisions;
+    private ArrayList<ListItem> provisions;
     
     
     public Game(){
@@ -69,11 +70,11 @@ public class Game implements Serializable{
         this.tools = tools;
     }
 
-    public ListItem getProvisions() {
+    public ArrayList<ListItem> getProvisions() {
         return provisions;
     }
 
-    public void setProvisions(ListItem provisions) {
+    public void setProvisions(ArrayList<ListItem> provisions) {
         this.provisions = provisions;
     }
 

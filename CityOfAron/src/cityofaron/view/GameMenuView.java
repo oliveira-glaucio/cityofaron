@@ -33,10 +33,6 @@ public class GameMenuView extends MenuView {
                 + " 5 - Return to the Main menu\n",5);
     }
     
-    
-
-    
-    
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
@@ -62,7 +58,6 @@ public class GameMenuView extends MenuView {
     }
 
     
-    
     // The viewMap method
     // Purpose: display the map
     // Parameters: none
@@ -72,9 +67,17 @@ public class GameMenuView extends MenuView {
         System.out.println("\nDisplay a map of the City of Aron.");
  }
 
-    public void viewList() {
-        System.out.println("\nPrint a List.");
-    }
+    // The viewList() method
+    // Purpose: Creates a ViewList object and calls its
+    //    displayMenuView ( ) method       
+    // Parameters: none
+    // Returns: none
+    public void viewList()
+    {
+        ListView lv = new ListView();
+        lv.displayMenu();                
+    } 
+
 
     public void moveToNewLocation() {
         System.out.println("\n Move to a new location.");

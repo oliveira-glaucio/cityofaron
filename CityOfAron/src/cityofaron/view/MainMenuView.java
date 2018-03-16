@@ -67,16 +67,31 @@ public class MainMenuView extends MenuView {
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void startNewGame() {          
+    public void startNewGame() {
+        
+        // Show banner page
+        System.out.println(
+            "\n********************************************************\n" +
+            "* Welcome to the City of Aaron. You have been summoned *\n" +
+            "* by the High Priest to assume your role as ruler of   *\n" +
+            "* the city. Your responsibility is to buy land, sell   *\n" +
+            "* land, determine how much wheat to plant each year,   *\n" +
+            "* and how much to set aside to feed the people. You     *\n" +
+            "* will also be required to pay an annual tithe on the  *\n" +
+            "* that is harvested. If you fail to provide      *\n" +
+            "* enough wheat for the people to eat, people will die  *\n" +
+            "* and your workforce will be diminished. Plan very     *\n" +
+            "* carefully or you may find yourself in trouble with   *\n" +
+            "* the people. And oh, watch out for plagues and rats!  *\n" +
+            "********************************************************\n");
+            
+            
         CropData cropData = createCropData();
         
         theGame = new Game();
         thePlayer = new Player();
-        
-         // Display the Banner Page.
-        System.out.println("\nWelcome to the city of Aaron.");
     
-        // Prompt for and get the user’s name.
+        //Prompt for and get the user's name.
         String name;
         System.out.println("\nPlease type in your first name: ");
         name = keyboard.next();
@@ -91,9 +106,11 @@ public class MainMenuView extends MenuView {
         theGame.setCropData(cropData);
         
         
-        // Display a welcome message
-        System.out.println("\nWelcome " + name + " have fun.");
+        // Welcome message
+        System.out.println("\nWelcome " + name + " have fun, during your Journey!");
         
+        //cityofaron.CityOfAron.createNewGame(name);
+                
         // Display the Game menu      
         GameMenuView gmv = new GameMenuView();
         gmv.displayMenu();
