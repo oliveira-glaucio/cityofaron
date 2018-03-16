@@ -18,7 +18,7 @@ public class ListView extends MenuView {
     
 private static Game theGame = cityofaron.CityOfAron.getTheGame();
     
-    public ListView() {
+    public ListView(){
         super("\n" +
                    "**********************************\n" +
                    "* CITY OF AARON:      LIST MENU  *\n" +
@@ -73,7 +73,7 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
         for(int i = 0; i < listOfAnimals.size(); i++ )
         {
             ListItem currentAnimal = listOfAnimals.get(i);  
-            System.out.println("Animal: " + currentAnimal.getName() + ", Worth: " + currentAnimal.getNumber() + " \n");
+            System.out.println("Animal: " + currentAnimal.getName() + ", Worth: " + currentAnimal.getNumber());
         }    
     }
 
@@ -86,7 +86,7 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
         for(int i = 0; i < listOfTools.size(); i++ )
         {
             ListItem currentTool = listOfTools.get(i);  
-            System.out.println("Tool: " + currentTool.getName() + ", Worth: " + currentTool.getNumber() + " \n");
+            System.out.println("Tool: " + currentTool.getName() + ", Worth: " + currentTool.getNumber());
         }       
     }
 
@@ -99,7 +99,7 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
         for(int i = 0; i < listOfProvisions.size(); i++ )
         {
             ListItem currentProvision = listOfProvisions.get(i);  
-            System.out.println("Provision: " + currentProvision.getName() + ", Worth: " + currentProvision.getNumber() + " \n");
+            System.out.println("Provision: " + currentProvision.getName() + ", Worth: " + currentProvision.getNumber());
         }      
     }
 

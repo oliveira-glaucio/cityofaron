@@ -11,10 +11,7 @@ import cityofaron.model.Player;
 // Author: Glaucio
 // Date last modified: February 2018
 //-------------------------------------------------------------
-public class GameMenuView extends MenuView {
-    private static Game theGame = null;
-    private static Player thePlayer = null;
-    
+public class GameMenuView extends MenuView {  
     
     // The MainMenuView constructor
     // Purpose: Initialize the menu data

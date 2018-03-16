@@ -1,6 +1,7 @@
 package cityofaron.view;
 
 import cityofaron.MenuView;
+import cityofaron.control.GameControl;
 import cityofaron.model.CropData;
 import cityofaron.model.Game;
 import java.util.Scanner;
@@ -84,33 +85,17 @@ public class MainMenuView extends MenuView {
             "* carefully or you may find yourself in trouble with   *\n" +
             "* the people. And oh, watch out for plagues and rats!  *\n" +
             "********************************************************\n");
-            
-            
-        CropData cropData = createCropData();
-        
-        theGame = new Game();
-        thePlayer = new Player();
-    
+              
         //Prompt for and get the user's name.
         String name;
         System.out.println("\nPlease type in your first name: ");
         name = keyboard.next();
-
-        // Save the user's name in the Player object
-        thePlayer.setName(name);
-
-        // Save a reference to the player object in the Game object
-        theGame.setThePlayer(thePlayer);
-
-        // Save a reference of a new cropData;
-        theGame.setCropData(cropData);
-        
-        
+       
         // Welcome message
         System.out.println("\nWelcome " + name + " have fun, during your Journey!");
-        
-        //cityofaron.CityOfAron.createNewGame(name);
                 
+        GameControl.createNewGame(name);
+        
         // Display the Game menu      
         GameMenuView gmv = new GameMenuView();
         gmv.displayMenu();
