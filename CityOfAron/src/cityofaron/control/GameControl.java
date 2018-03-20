@@ -137,6 +137,48 @@ public class GameControl {
        theMap.setLocation(0, 2, loc);
 
        //Put the other locations here (TODO / UPDATE this function...)
+        
+        /*
+        
+ //define the string for a wildland location
+ System.out.println("creating wildlands");
+String  forest= "\nYou are in the wildlands" +
+"\You have went beyond the hils and beyond the safety of the city" +
+"\nFrom here you can almost see the lamanite camp!";
+
+ // set a wildlands location with a hint
+ loc = new Location();       
+ loc.setDescription(wildlands + "\City of Aaron has summer all year round, and harvest is always the same. Plan accordingly!");
+  loc.setSymbol("!!!");
+ theMap.setLocation(0, 1, loc);
+ 
+
+ //define the string for a forest  location                        
+ System.out.println("creating forest");
+String  forest= "\nYou are in the forest of Lehi" +
+"\The forest of Lehi is ancient and untainted." +
+"\nThe only mark of civilisation here is an equally  old road that connects the mines, the city and the port.";
+
+ // set a forest location with a hint
+ loc = new Location();
+ loc.setDescription(forest + "\nAlways try to balance population growth and food surpluss.");
+ loc.setSymbol("!!!");
+ theMap.setLocation(0, 4, loc);
+
+//define the string for a port location
+System.out.println("creating port");
+String  port= "\nYou are at the sea port of the sea of Nephi" +
+"\The port is major trading center and source of much wealth of the city" +
+"\nHere the citisens of the city do much of their trade and bussiness with the outside world.";
+
+ // set a port location with a hint
+ loc = new Location();
+ loc.setDescription(port + "\nBuy and send land to acumulate aditional wheat. Be carefull not to lose to wheat or people will starve!.");
+ loc.setSymbol("!!!");
+ theMap.setLocation(0, 5, loc);
+
+ 
+ */
        
        theGame.setTheMap(theMap);
     }
