@@ -139,7 +139,7 @@ public class GameControl {
        //Put the other locations here (TODO / UPDATE this function...)
         
         /*
-        / define the string for a hills  location                      
+  / define the string for a hills  location                      
 System.out.println("creating hills");
 String  hills= "\nYou are the hills. The hills are natural barrier and defense of the city." +
 "\It is also mined and provides much of resources used in the city." +
@@ -148,7 +148,7 @@ String  hills= "\nYou are the hills. The hills are natural barrier and defense o
  // set a hill location with a hint
  loc = new Location();       
  loc.setDescription(hills + "\Twenty bushels of wheat can feed one person for a year.");
-  loc.setSymbol("!!!");
+  loc.setSymbol("/\/\");
  theMap.setLocation(0, 1, loc);
 
  
@@ -160,8 +160,8 @@ String  port= "\nYou are at the river port." +
 
  // set a port location with a hint
  loc = new Location();
- loc.setDescription(port + "\nBuy and send land to acumulate aditional wheat. Be carefull not to lose to wheat or people will starve!.");
- loc.setSymbol("!!!");
+ loc.setDescription(port + "\nBuy and sell land to acumulate aditional wheat. Be carefull not gable to much of wheat or people will starve!.");
+ loc.setSymbol("$+$");
  theMap.setLocation(0, 3, loc);
 
  //define the string for a forest  location                        
@@ -172,8 +172,8 @@ String  forest= "\nYou are in the forest of Lehi" +
 
  // set a forest location with a hint
  loc = new Location();
- loc.setDescription(forest + "\nAlways try to balance population growth and food surpluss.");
- loc.setSymbol("!!!");
+ loc.setDescription(forest + "\nAlways try to balance population growth and food surpluss. Never lose track of neither.");
+ loc.setSymbol("^^^");
  theMap.setLocation(0, 5, loc);
 
  
@@ -188,8 +188,8 @@ String  forest= "\nYou are in the wildlands" +
 
  // set a wildlands location with a hint
  loc = new Location();       
- loc.setDescription(wildlands + "\City of Aaron has summer all year round, and harvest is always the same. Plan accordingly!");
-  loc.setSymbol("!!!");
+ loc.setDescription(wildlands + "\While the city of Aaron enjoys year round summer, harvest may wary. Always maintain some in store.");
+  loc.setSymbol("---");
  theMap.setLocation(0, 1, loc);
  */
        
