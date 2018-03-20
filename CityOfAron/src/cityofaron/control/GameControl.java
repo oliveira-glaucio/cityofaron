@@ -134,6 +134,8 @@ public class GameControl {
        loc = new Location();
        loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
        loc.setSymbol("!!!");
+        
+        //set this location object in each cell of the array in column 2
        theMap.setLocation(0, 2, loc);
 
        //Put the other locations here (TODO / UPDATE this function...)
@@ -149,8 +151,12 @@ String  hills= "\nYou are the hills. The hills are natural barrier and defense o
  loc = new Location();       
  loc.setDescription(hills + "\Twenty bushels of wheat can feed one person for a year.");
   loc.setSymbol("/\/\");
+  
+  //set this location object in each cell of the array in column 1
+   for(int i = 0; i < 2; i++)
+       {
  theMap.setLocation(0, 1, loc);
-
+       }
  
  //define the string for a port location
 System.out.println("creating port");
@@ -162,8 +168,12 @@ String  port= "\nYou are at the river port." +
  loc = new Location();
  loc.setDescription(port + "\nBuy and sell land to acumulate aditional wheat. Be carefull not gable to much of wheat or people will starve!.");
  loc.setSymbol("$+$");
+ 
+ //set this location object in each cell of the array in column 4
+ for(int i = 0; i < 4; i++)
+       {
  theMap.setLocation(0, 3, loc);
-
+        }
  //define the string for a forest  location                        
  System.out.println("creating forest");
 String  forest= "\nYou are in the forest of Lehi" +
@@ -174,8 +184,12 @@ String  forest= "\nYou are in the forest of Lehi" +
  loc = new Location();
  loc.setDescription(forest + "\nAlways try to balance population growth and food surpluss. Never lose track of neither.");
  loc.setSymbol("^^^");
+ 
+  //set this location object in each cell of the array in column 5
+ for(int i = 0; i < MAX_ROW; i++)
+       {
  theMap.setLocation(0, 5, loc);
-
+        }
  
  */
         
