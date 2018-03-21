@@ -72,6 +72,7 @@ public class HelpMenuView extends MenuView {
     {
         System.out.println("*Game goals*");
     }
+    
     // The displayLocation method
     // Purpose: displays where the city of Aaron is loacted
     // Parameters: none
@@ -81,6 +82,7 @@ public class HelpMenuView extends MenuView {
     {
         System.out.println("*Location*");
     }
+    
     // The displayHelpViewMap method
     // Purpose: displays the goals of the game
     // Parameters: none
@@ -90,6 +92,7 @@ public class HelpMenuView extends MenuView {
     {
         System.out.println("*How to view the Map*");
     }
+    
     // The displayHelpMoveLocation method
     // Purpose: explains how to move to another location
     // Parameters: none

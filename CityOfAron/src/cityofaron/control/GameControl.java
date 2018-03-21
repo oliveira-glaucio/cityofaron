@@ -22,7 +22,7 @@ public class GameControl {
     // reference to a Game object
     private static Game theGame;
     
-     public static void createNewGame(String pName)
+    public static void createNewGame(String pName)
     {
         // Created the game object. Save it in the main driver file
         theGame = new Game();

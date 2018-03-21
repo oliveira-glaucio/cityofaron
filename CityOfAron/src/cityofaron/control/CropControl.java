@@ -1,5 +1,6 @@
 package cityofaron.control;
 
+import cityofaron.exceptions.CropException;
 import cityofaron.model.CropData;
 import java.util.Random;
 
@@ -204,24 +205,24 @@ public class CropControl {
 // Parameters: the price of land and the number of acres to buy
 // Returns: the acres of owned land
 // Pre-conditions: acres to buy must be positive, but cannot exceed Bushels Of Wheat that is had at the moment.
-    public static int buyLand(int acresToBuy, CropData cropData, int landPrice, int workers) {
+    public static int buyLand(int acresToBuy, CropData cropData, int landPrice, int workers) throws CropException {
         int acresOwned = cropData.getAcresOwned();
         int wheatInStore = cropData.getWheatInStore();
         //if acresToBuy < 0, return -1
         if (acresToBuy < 0) {
-            return -1;
+            throw new CropException("A negative value was input");
         }
         //if wheatInStore < landPrice, return -1
         if (wheatInStore < landPrice) {
-            return -1;
+            throw new CropException("-1");
         }
         //if workers < (acresOwned / 10)
         if (workers < (acresOwned / 10)) {
-            return -1;
+            throw new CropException("-1");
         }
         //if acresToBuy * landPrice > wheatInStore, return -1
         if (acresToBuy * landPrice > wheatInStore) {
-            return -1;
+            throw new CropException("-1");
         }
         //wheatInStore = wheatInStore - (acresToBuy * landPrice)
         wheatInStore = wheatInStore - (acresToBuy * landPrice);
