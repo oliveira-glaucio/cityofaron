@@ -141,6 +141,19 @@ public class GameControl {
        //Put the other locations here (TODO / UPDATE this function...)
         
         /*
+ //define the string for a wildland location
+ System.out.println("creating wildlands");
+String  wildland= "\nYou are in the wildlands" +
+"\nYou have went beyond the hils and beyond the safety of the city" +
+"\nFrom here you can almost see the lamanite camp!";
+ // set a wildlands location with a hint
+ loc = new Location();       
+ loc.setDescription(wildlands + "\nWhile the city of Aaron enjoys year round summer, harvest may wary. Always maintain some in store.");
+  loc.setSymbol("---");
+  
+  for(int i = 0; i < MIN_ROW; i++)
+ theMap.setLocation(i, 5, loc);
+        
   / define the string for a hills  location                      
 System.out.println("creating hills");
 String  hills= "\nYou are the hills. The hills are natural barrier and defense of the city." +
@@ -193,21 +206,6 @@ String  forest= "\nYou are in the forest of Lehi" +
  
  */
         
-        /*
- //define the string for a wildland location
- System.out.println("creating wildlands");
-String  wildland= "\nYou are in the wildlands" +
-"\nYou have went beyond the hils and beyond the safety of the city" +
-"\nFrom here you can almost see the lamanite camp!";
-
- // set a wildlands location with a hint
- loc = new Location();       
- loc.setDescription(wildlands + "\nWhile the city of Aaron enjoys year round summer, harvest may wary. Always maintain some in store.");
-  loc.setSymbol("---");
-  
-  for(int i = 0; i < MIN_ROW; i++)
- theMap.setLocation(i, 0, loc);
- */
        
        theGame.setTheMap(theMap);
     }
