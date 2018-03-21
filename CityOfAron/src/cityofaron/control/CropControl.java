@@ -214,15 +214,15 @@ public class CropControl {
         }
         //if wheatInStore < landPrice, return -1
         if (wheatInStore < landPrice) {
-            throw new CropException("-1");
+            throw new CropException("The price of land cannot be greater than ammount of wheat in store. Please insert smaller number");
         }
         //if workers < (acresOwned / 10)
         if (workers < (acresOwned / 10)) {
-            throw new CropException("-1");
+            throw new CropException("There is not enought workers to work on that much land. Please insert smaller number");
         }
         //if acresToBuy * landPrice > wheatInStore, return -1
         if (acresToBuy * landPrice > wheatInStore) {
-            throw new CropException("-1");
+            throw new CropException("There is not enought wheat in store to buy this ammount of land. Please insert smaller number");
         }
         //wheatInStore = wheatInStore - (acresToBuy * landPrice)
         wheatInStore = wheatInStore - (acresToBuy * landPrice);
