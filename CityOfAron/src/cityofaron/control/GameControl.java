@@ -136,7 +136,7 @@ public class GameControl {
        loc.setSymbol("!!!");
         
         //set this location object in each cell of the array in column 2
-       theMap.setLocation(0, 2, loc);
+       theMap.setLocation(i, 2, loc);
 
        //Put the other locations here (TODO / UPDATE this function...)
         
@@ -144,24 +144,24 @@ public class GameControl {
   / define the string for a hills  location                      
 System.out.println("creating hills");
 String  hills= "\nYou are the hills. The hills are natural barrier and defense of the city." +
-"\It is also mined and provides much of resources used in the city." +
+"\nIt is also mined and provides much of resources used in the city." +
 "\nBeyond it lies the wilderness that belongs to the Lamanites..";
                        
  // set a hill location with a hint
  loc = new Location();       
- loc.setDescription(hills + "\Twenty bushels of wheat can feed one person for a year.");
+ loc.setDescription(hills + "\nTwenty bushels of wheat can feed one person for a year.");
   loc.setSymbol("/\/\");
   
   //set this location object in each cell of the array in column 1
    for(int i = 0; i < 2; i++)
        {
- theMap.setLocation(0, 1, loc);
+ theMap.setLocation(i, 1, loc);
        }
  
  //define the string for a port location
 System.out.println("creating port");
 String  port= "\nYou are at the river port." +
-"\The port is major trading center and source of much wealth of the city" +
+"\nThe port is major trading center and source of much wealth of the city" +
 "\nHere the citisens of the city do much of their trade and bussiness with the outside world.";
 
  // set a port location with a hint
@@ -172,12 +172,12 @@ String  port= "\nYou are at the river port." +
  //set this location object in each cell of the array in column 4
  for(int i = 0; i < 4; i++)
        {
- theMap.setLocation(0, 3, loc);
+ theMap.setLocation(i, 3, loc);
         }
  //define the string for a forest  location                        
  System.out.println("creating forest");
 String  forest= "\nYou are in the forest of Lehi" +
-"\The forest of Lehi is ancient and untainted." +
+"\nThe forest of Lehi is ancient and untainted." +
 "\nThe only mark of civilisation here is an equally  old road that connects the City of Nephi with the rest of Nephite city-states.";
 
  // set a forest location with a hint
@@ -188,23 +188,25 @@ String  forest= "\nYou are in the forest of Lehi" +
   //set this location object in each cell of the array in column 5
  for(int i = 0; i < MAX_ROW; i++)
        {
- theMap.setLocation(0, 5, loc);
+ theMap.setLocation(i, 5, loc);
         }
  
  */
         
         /*
-        //define the string for a wildland location
+ //define the string for a wildland location
  System.out.println("creating wildlands");
-String  forest= "\nYou are in the wildlands" +
-"\You have went beyond the hils and beyond the safety of the city" +
+String  wildland= "\nYou are in the wildlands" +
+"\nYou have went beyond the hils and beyond the safety of the city" +
 "\nFrom here you can almost see the lamanite camp!";
 
  // set a wildlands location with a hint
  loc = new Location();       
- loc.setDescription(wildlands + "\While the city of Aaron enjoys year round summer, harvest may wary. Always maintain some in store.");
+ loc.setDescription(wildlands + "\nWhile the city of Aaron enjoys year round summer, harvest may wary. Always maintain some in store.");
   loc.setSymbol("---");
- theMap.setLocation(0, 1, loc);
+  
+  for(int i = 0; i < MIN_ROW; i++)
+ theMap.setLocation(i, 0, loc);
  */
        
        theGame.setTheMap(theMap);
