@@ -28,16 +28,17 @@ public class CropControl {
 // Returns: the acres owned after the sale
 // Pre-conditions: acres to sell must be positive
 // and <= acresOwned
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
+    public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException {
         //if acresToSell < 0, return -1
         if (acresToSell < 0) {
-            return -1;
+        throw new CropException("Unofrtunetly, you do not own lad at this momment. Buy first and then sell.");
         }
 
         //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if (acresToSell > owned) {
-            return -1;
+        throw new CropException("You are trying to sell more land than you have,only banks do this type of behaviour. Please insert smaller number");
+
         }
 
         //acresOwned = acresOwned - acresToSell
@@ -184,15 +185,15 @@ public class CropControl {
 // Parameters: Wheat Allocated
 // Returns: Wheat Stored.
 // Pre-conditions: Wheat must be positive, and cannot exceed the amount that is stored
-    public static int feedPeople(CropData cropData, int wheatAllocated) {
+    public static int feedPeople(CropData cropData, int wheatAllocated) throws CropException{
         // if wheatInStore < 0, return -1
         int wheatInStore = cropData.getWheatInStore();
         if (wheatInStore < 0) {
-            return -1;
+            throw new CropException("Unofrtunetly, your wheat reserves are empty!");
         }
         //if wheatAllocated > wheatInStore,  return -1
         if (wheatAllocated > wheatInStore) {
-            return -1;
+            throw new CropException("You do not have enouhg wheat in store to alocate. Please insert smaller number");
         }
         // wheatInStore = wheatInStore– wheatAllocated
         wheatInStore = wheatInStore - wheatAllocated;
