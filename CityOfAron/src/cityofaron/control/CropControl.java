@@ -238,20 +238,22 @@ public class CropControl {
 // Purpose: plant the crops.
 // Parameters: the number of acres of land that the player wants to plant.
 // Returns: must return a positive number. Returns the remaining number
-// of wheat in store. If there's an error, return -1.
+// of wheat in store. If there's an error, an exception is throw.
 // Pre-conditions: number of wheat in store and acres must be enough for 
 // user to plant the crops.
     
-    public int plantCrops(int acresToPlant,int acresOwned, int wheatInStore, CropData cropData) {
+    public int plantCrops(int acresToPlant,int acresOwned, int wheatInStore, CropData cropData) throws CropException {
 
     //If acresToPlant > acresOwned then, return -1
     int owned = cropData.getAcresOwned();
     if(acresToPlant > acresOwned)
-        return -1;
+        throw new CropException("The amount of acres to plant can't be higher then the acres owned.");
+    
     //Also, if acresToPlant > wheatInStore then, return -1
         owned = cropData.getWheatInStore();
         if(acresToPlant > wheatInStore) 
-            return -1;
+            throw new CropException("the amount of acres to plant can't be higher then the wheats in store.");
+        
     //return acresOwned
     return acresOwned;
 
@@ -263,14 +265,15 @@ public class CropControl {
     // Returns: '0' if it's a valid value OR '-1' if it's an invalid value
     // Pre-conditions: Offering percentage must be between 0 and 100
     
-    public int payOffering(int wheatInStore, int offeringAmount, CropData cropData) {
+    public int payOffering(int wheatInStore, int offeringAmount, CropData cropData) throws CropException {
         //If payOffering < 0, then return -1
         
         if(cropData.getOffering() < 0)
-            return -1;
+            throw new CropException("The percentage of offering must be positive.");
         //If payOffering > 100, then return -1
         if(cropData.getOffering() > 100)
-            return -1;
+            throw new CropException("The percentage of offering cannot be higher then 100%.");
+        
         //wheatInStore - offeringAmount
         cropData.setOffering(cropData.getWheatInStore() - offeringAmount);
         

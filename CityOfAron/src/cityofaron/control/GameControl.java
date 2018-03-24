@@ -136,7 +136,7 @@ public class GameControl {
        loc.setSymbol("!!!");
         
         //set this location object in each cell of the array in column 2
-       theMap.setLocation(i, 2, loc);
+        //theMap.setLocation(i , 2, loc);
 
        //Put the other locations here (TODO / UPDATE this function...)
         

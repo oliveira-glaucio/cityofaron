@@ -61,27 +61,37 @@ public class CropView {
         // Get the user’s input and save it.
         int toSell = 0, typedValue = 0;
         Boolean validInput = false;
+        boolean paramsNotOkay;
 
-        //Wait for a valid and positive input
-        while (!validInput) {
-            validInput = keyboard.hasNextInt();
+        do {
+            paramsNotOkay = false;
 
-            if (validInput == true) {
-                typedValue = keyboard.nextInt();
+            //Wait for a valid and positive input
+            while (!validInput) {
+                validInput = keyboard.hasNextInt();
 
-                if (typedValue <= 0) {
-                    System.out.print("\nPlease type a positive number.");
-                    validInput = false;
-                } else if (CropControl.getCropData().getAcresOwned() > typedValue) {
-                    System.out.print("\nYou don't have all this land to sell. Type a smaller number.");
-                    validInput = false;
+                if (validInput == true) {
+                    typedValue = keyboard.nextInt();
+
+                    if (typedValue <= 0) {
+                        System.out.print("\nPlease type a positive number.");
+                        validInput = false;
+                    } else if (CropControl.getCropData().getAcresOwned() > typedValue) {
+                        System.out.print("\nYou don't have all this land to sell. Type a smaller number.");
+                        validInput = false;
+                    }
                 }
             }
-        }
 
-        toSell = typedValue;
-
-        CropControl.sellLand(0, toSell, theCropData);
+            toSell = typedValue;
+            try {
+                CropControl.sellLand(0, toSell, theCropData);
+            } catch (CropException e) {
+                System.out.println("I am sorry, something went wrong.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        } while (paramsNotOkay);
     }
     // The feedPeopleView method()
 // Purpose: allocates wheat to feed the people
@@ -124,11 +134,10 @@ public class CropView {
 // Purpose: runs the City of Aron Game
 // Parameters: none
 // Returns: none
-    public static void runCropsView() {
+    public static void runCropsView() throws CropException {
         buyLandView();
 
         sellLandView();
-
     }
 
 }
