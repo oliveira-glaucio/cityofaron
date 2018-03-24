@@ -93,16 +93,13 @@ public class CropView {
             }
         } while (paramsNotOkay);
     }
-    // The feedPeopleView method()
+// The feedPeopleView method()
 // Purpose: allocates wheat to feed the people
 // Parameters: none
 // Returns: none
 //Author: Arunas Rancevas
-    //Please advice how to make this work 100 %?
-
     public static void feedPeopleView() {
         // Get wheat in store for this round.
-        //int wheatInStore = CropControl.WheatInStore();
 
         // Prompt the user to enter the number of wheat to allocate
         System.out.print("\nHow many bushels of grain do you want to give to the people? ");
@@ -110,7 +107,8 @@ public class CropView {
         //  Get the user’s input and save it.
         int toFeed, typedValue;
         toFeed = keyboard.nextInt();
-        Boolean validInput = false;
+        boolean paramsNotOkay;
+
 
         //Wait for a valid and positive input
         while (!validInput) {
@@ -128,13 +126,22 @@ public class CropView {
                 }
             }
         }
-    }//the fourth on
+             toFeed = typedValue;
+            try {
+                CropControl.feedPeople(0, toFeed, theCropData);
+            } catch (CropException e) {
+                System.out.println("Excuse me, something went wrong.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        } while (paramsNotOkay);
+    }//the fourth one
 
 // The runCropsView method()
 // Purpose: runs the City of Aron Game
 // Parameters: none
 // Returns: none
-    public static void runCropsView() throws CropException {
+    public static void runCropsView() throws CropException//necessery? {
         buyLandView();
 
         sellLandView();
