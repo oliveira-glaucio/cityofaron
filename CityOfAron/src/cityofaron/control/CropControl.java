@@ -31,13 +31,13 @@ public class CropControl {
     public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException {
         //if acresToSell < 0, return -1
         if (acresToSell < 0) {
-        throw new CropException("Unofrtunetly, you do not own lad at this momment. Buy first and then sell.");
+        throw new CropException("Unofrtunetly, you do not own any land at this momment. Please buy some and then try to sell later.");
         }
 
         //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if (acresToSell > owned) {
-        throw new CropException("You are trying to sell more land than you have,only banks do this type of behaviour. Please insert smaller number");
+        throw new CropException("You are trying to sell more land than you currentlu have,only banks exhibit this type of behaviour. Please insert smaller number");
 
         }
 
@@ -193,7 +193,7 @@ public class CropControl {
         }
         //if wheatAllocated > wheatInStore,  return -1
         if (wheatAllocated > wheatInStore) {
-            throw new CropException("You do not have enouhg wheat in store to alocate. Please insert smaller number");
+            throw new CropException("You do not have that much  wheat in store to allocate. Please insert smaller number");
         }
         // wheatInStore = wheatInStore– wheatAllocated
         wheatInStore = wheatInStore - wheatAllocated;
@@ -211,7 +211,7 @@ public class CropControl {
         int wheatInStore = cropData.getWheatInStore();
         //if acresToBuy < 0, return -1
         if (acresToBuy < 0) {
-            throw new CropException("A negative value was input");
+            throw new CropException("A negative value was input. Please insert possitive number.");
         }
         //if wheatInStore < landPrice, return -1
         if (wheatInStore < landPrice) {
