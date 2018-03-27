@@ -108,25 +108,8 @@ public class CropView {
         int toFeed, typedValue;
         toFeed = keyboard.nextInt();
         boolean paramsNotOkay;
-
-
-        //Wait for a valid and positive input
-        while (!validInput) {
-            validInput = keyboard.hasNextInt();
-
-            if (validInput == true) {
-                typedValue = keyboard.nextInt();
-
-                if (typedValue <= 0) {
-                    System.out.print("\nPlease type a positive number.");
-                    validInput = false;
-                } else if (theCropData.getWheatInStore() > typedValue) {
-                    System.out.print("\nYou don't have all this wheat to alocate. Type a smaller number.");
-                    validInput = false;
-                }
-            }
-        }
-             toFeed = typedValue;
+        
+        toFeed = typedValue;
             try {
                 CropControl.feedPeople(0, toFeed, theCropData);
             } catch (CropException e) {
