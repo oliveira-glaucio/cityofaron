@@ -191,9 +191,14 @@ public class CropControl {
         if (wheatInStore < 0) {
             throw new CropException("Unofrtunetly, your wheat reserves are empty!");
         }
+        
         //if wheatAllocated > wheatInStore,  return -1
         if (wheatAllocated > wheatInStore) {
-            throw new CropException("You do not have that much  wheat in store to allocate. Please insert smaller number");
+            throw new CropException("You do not have that much  wheat in store to allocate. Please insert smaller number.");
+        }
+          //if wheatAllocated > -1,  return -1
+        if (wheatAllocated > -1) {
+            throw new CropException("You are trying to allocate a negative number of wheat, which is impossible. Please type in positive number.");
         }
         // wheatInStore = wheatInStore– wheatAllocated
         wheatInStore = wheatInStore - wheatAllocated;
