@@ -99,25 +99,23 @@ public class CropView {
 // Returns: none
 //Author: Arunas Rancevas
     public static void feedPeopleView() {
-        // Get wheat in store for this round.
-
-        // Prompt the user to enter the number of wheat to allocate
-        System.out.print("\nHow many bushels of grain do you want to give to the people? ");
-
-        //  Get the user’s input and save it.
-        int toFeed, typedValue;
-        toFeed = keyboard.nextInt();
-        boolean paramsNotOkay;
-        
-        toFeed = typedValue;
+  // Check wheatInStore for this round.
+   int wheatInStore = theCropData.getWheatInStore();
+   //  Get the user’s input and save it.
+   int toFeed;
+   boolean paramsNotOkay;
+     do {
+            paramsNotOkay = false;
+            System.out.print("\nHow many bushels of wheat do you want to alloacte to the people?  ");   
+            toFeed = keyboard.nextInt();
             try {
-                CropControl.feedPeople(0, toFeed, theCropData);
-            } catch (CropException e) {
+                CropControl.feedPeople(toFeed, theCropData);  
+            } catch(CropException e) {
                 System.out.println("Excuse me, something went wrong.");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
             }
-        } while (paramsNotOkay);
+        }while(paramsNotOkay);
     }//the fourth one
 
 // The runCropsView method()
