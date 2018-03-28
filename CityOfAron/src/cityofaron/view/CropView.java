@@ -109,7 +109,7 @@ public class CropView {
             System.out.print("\nHow many bushels of wheat do you want to alloacte to the people?  ");   
             toFeed = keyboard.nextInt();
             try {
-                CropControl.feedPeople(toFeed, theCropData);  
+              CropControl.feedPeople(theCropData, toFeed);  
             } catch(CropException e) {
                 System.out.println("Excuse me, something went wrong.");
                 System.out.println(e.getMessage());
