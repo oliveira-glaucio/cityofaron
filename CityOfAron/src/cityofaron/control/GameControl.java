@@ -8,6 +8,10 @@ package cityofaron.control;
 import java.util.ArrayList;
 import cityofaron.CityOfAron;
 import cityofaron.model.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -209,4 +213,45 @@ String  forest= "\nYou are in the forest of Lehi" +
        
        theGame.setTheMap(theMap);
     }
+    
+    
+    // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void getSavedGame(String filePath)
+    {       
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game)  input.readObject();
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nOops :(\nSomething went wrong while reading the saved game file");
+        }
+    }   
+    
+    
+    // SaveGame method
+    // Purpose: Save the Game to the disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void SaveGame(String filePath)
+    {
+        //Game theGame = null;
+        
+        try (FileOutputStream fips = new FileOutputStream(filePath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fips);
+            output.writeObject(theGame);
+            output.flush();
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nOops :(\nSomething went wrong while trying to save the game file.");
+        }
+    }   
 }

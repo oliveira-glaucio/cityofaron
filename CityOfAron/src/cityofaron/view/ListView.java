@@ -27,8 +27,10 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
                    " 2 - View a list of animals\n" +
                    " 3 - View a list of tools\n" +
                    " 4 - View a list of provisions\n" +
-                   " 5 - Return to the game menu\n"
-             , 5);
+                   " 5 - Save a Report of provisions\n" +
+                   " 6 - Save a Report of Animals\n" +
+                   " 7 - Return to the game menu\n"
+             , 7);
     }
     
     
@@ -53,7 +55,13 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
             case 4: // display a list of provisions
                 viewListOfProvisions();
                 break;
-            case 5: // return to the game menu
+            case 5: // save a report of provisions
+                saveReportProvisions();
+                break;
+            case 6: // save a report of animals
+                saveReportAnimals();
+                break;
+            case 7: // return to the game menu
                 break;
         }
     }
@@ -101,6 +109,14 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
             ListItem currentProvision = listOfProvisions.get(i);  
             System.out.println("Provision: " + currentProvision.getName() + ", Worth: " + currentProvision.getNumber());
         }      
+    }
+
+    private void saveReportProvisions() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void saveReportAnimals() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

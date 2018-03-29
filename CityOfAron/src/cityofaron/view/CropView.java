@@ -122,9 +122,9 @@ public class CropView {
 // Purpose: runs the City of Aron Game
 // Parameters: none
 // Returns: none
-    public static void runCropsView() throws CropException//necessery? {
+    public static void runCropsView() throws CropException {
         buyLandView();
-
+        
         sellLandView();
     }
 
