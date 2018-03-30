@@ -114,9 +114,14 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
     private void saveReportProvisions() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    private void saveReportAnimals() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+/*  //Please check if this is ok?
+      private void saveReportAnimals() {
+      String saveAnimals;
+      System.out.println("\nPlease enther the name of your saved file.");
+      keyboard.nextLine();
+      saveAnimals = keyboard.nextLine();
+      GameControl.saveReportAnimals(saveAnimal);.
     }
+    */
 
 }
