@@ -256,16 +256,20 @@ String  forest= "\nYou are in the forest of Lehi" +
     }   
     
     /* please check if it is okay??
+    
       public static void saveReportAnimals(String outputLocation)  {
+      
       ArrayList<ListItem> animals = theGame.getAnimals();
-      try (PrintWriter out = new PrintWriter(outputLocation)) {
+      try (PrintWriter out = new PrintWriter(outputLocation)) 
+   {
       out.println("\n\n **********Animal List Report**********");
       out.printf("%n%-10s%10s","  Animal  ","Quantity");
       out.printf("%n%-10s%10s","**********","**********");
-     for (ListItem item : animals) {
+      
+          for (ListItem item : animals) {
       ut.printf("%n%-10s%10d", item.getName(), item.getNumber());
-          }
-         
+      
+      }
       } catch (IOException ex) {
           System.out.println("Sorry there was an error.");
       }
