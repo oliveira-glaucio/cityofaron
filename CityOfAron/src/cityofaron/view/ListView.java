@@ -9,6 +9,7 @@ import cityofaron.MenuView;
 import cityofaron.model.Game;
 import cityofaron.model.ListItem;
 import java.util.ArrayList;
+import cityofaron.control.GameControl;//week-12
 
 /**
  *
@@ -114,14 +115,12 @@ private static Game theGame = cityofaron.CityOfAron.getTheGame();
     private void saveReportProvisions() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-/*  //Please check if this is ok?
+
       private void saveReportAnimals() {
       String saveAnimals;
       System.out.println("\nPlease enther the name of your saved file.");
       keyboard.nextLine();
       saveAnimals = keyboard.nextLine();
-      GameControl.saveReportAnimals(saveAnimal);.
+      GameControl.saveReportAnimals(saveAnimals);
     }
-    */
-
 }
