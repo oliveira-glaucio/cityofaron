@@ -12,6 +12,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWrite;// week-12
 
 /**
  *
@@ -255,7 +256,6 @@ String  forest= "\nYou are in the forest of Lehi" +
         }
     }   
     
-    /* please check if it is okay??
     
       public static void saveReportAnimals(String outputLocation)  {
       
@@ -267,13 +267,13 @@ String  forest= "\nYou are in the forest of Lehi" +
       out.printf("%n%-10s%10s","**********","**********");
       
           for (ListItem item : animals) {
-      ut.printf("%n%-10s%10d", item.getName(), item.getNumber());
+      out.printf("%n%-10s%10d", item.getName(), item.getNumber());
       
       }
-      } catch (IOException ex) {
+      } catch (Exception e) {
           System.out.println("Sorry there was an error.");
       }
   }
-  */
+ 
     
 }
