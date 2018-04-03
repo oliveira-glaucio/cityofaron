@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-//import java.io.PrintWrite;// week-12
+import java.io.PrintWrite;// week-12
 
 /**
  *
@@ -258,7 +258,7 @@ String  forest= "\nYou are in the forest of Lehi" +
     }   
     
     
-      /*public static void saveReportAnimals(String outputLocation)  {
+      public static void saveReportAnimals(String outputLocation)  {
       
       ArrayList<ListItem> animals = theGame.getAnimals();
       try (PrintWriter out = new PrintWriter(outputLocation)) 
@@ -275,7 +275,4 @@ String  forest= "\nYou are in the forest of Lehi" +
           System.out.println("Sorry there was an error.");
       }
   }
-*/
- 
-    
 }
