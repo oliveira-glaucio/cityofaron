@@ -146,20 +146,7 @@ public class GameControl {
        //Put the other locations here (TODO / UPDATE this function...)
         
         /*
- //define the string for a wildland location
- System.out.println("creating wildlands");
-String  wildland= "\nYou are in the wildlands" +
-"\nYou have went beyond the hils and beyond the safety of the city" +
-"\nFrom here you can almost see the lamanite camp!";
- // set a wildlands location with a hint
- loc = new Location();       
- loc.setDescription(wildlands + "\nWhile the city of Aaron enjoys year round summer, harvest may wary. Always maintain some in store.");
-  loc.setSymbol("---");
-  
-  for(int i = 0; i < MIN_ROW; i++)
- theMap.setLocation(i, 5, loc);
-        
-  / define the string for a hills  location                      
+   // define the string for a hills  location                      
 System.out.println("creating hills");
 String  hills= "\nYou are the hills. The hills are natural barrier and defense of the city." +
 "\nIt is also mined and provides much of resources used in the city." +
@@ -170,12 +157,47 @@ String  hills= "\nYou are the hills. The hills are natural barrier and defense o
  loc.setDescription(hills + "\nTwenty bushels of wheat can feed one person for a year.");
   loc.setSymbol("/\/\");
   
-  //set this location object in each cell of the array in column 1
-   for(int i = 0; i < 2; i++)
+  //set this location object in each cell of the array in column 4
+       for(int i = 0; i <  MAX_ROW; i++)
        {
- theMap.setLocation(i, 1, loc);
+        theMap.setLocation(i, 4, loc);
+       }      
+      
+      
+           //define the string for a farm land location
+       String farmland = "\nYou are on the fertile banks of the River." +
+       "\nIn the springthis low farmland floods and is covered with rich" +
+       "\nnew soil. Wheat is planted as far as you can see."; 
+
+       //set a farmland location with a hint
+       loc = new Location();
+       loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+       loc.setSymbol("!!!");
+        
+      //set this location object in each cell of the array in column 3      
+       for(int i = 0; i < 4; i++)
+       {
+           theMap.setLocation(i, 3, loc);
+       } 
+       //create a string that will go in the Location objects
+       //that contain the river
+       String river = "\nYou are on the River. The river is the source" +
+       "\nof life for our city. The river marks the eastern " +
+       "\nboundary of the city - it is wilderness to the East.";
+
+       //create a new Location object
+       Location loc = new Location();
+
+       //use setters in the Location class to set the description and symbol
+       loc.setDescription(river + "\nWhile the city of Aaron enjoys year round summer, harvest may wary. Always maintain some wheat in store.");
+       loc.setSymbol("~~~");  
+
+       //set this location object in each cell of the array in column 2     
+       for(int i = 0; i < 3; i++)
+       {
+           theMap.setLocation(i, 2, loc);
        }
- 
+       
  //define the string for a port location
 System.out.println("creating port");
 String  port= "\nYou are at the river port." +
@@ -186,11 +208,12 @@ String  port= "\nYou are at the river port." +
  loc.setDescription(port + "\nBuy and sell land to acumulate aditional wheat. Be carefull not gable to much of wheat or people will starve!.");
  loc.setSymbol("$+$");
  
- //set this location object in each cell of the array in column 4
- for(int i = 0; i < 4; i++)
+ //set this location object in each cell of the array in column 1
+ for(int i = 0; i < 2; i++)
        {
- theMap.setLocation(i, 3, loc);
+ theMap.setLocation(i, 1, loc);
         }
+        
  //define the string for a forest  location                        
  System.out.println("creating forest");
 String  forest= "\nYou are in the forest of Lehi" +
@@ -201,12 +224,11 @@ String  forest= "\nYou are in the forest of Lehi" +
  loc.setDescription(forest + "\nAlways try to balance population growth and food surpluss. Never lose track of neither.");
  loc.setSymbol("^^^");
  
-  //set this location object in each cell of the array in column 5
- for(int i = 0; i < MAX_ROW; i++)
+  //set this location object in each cell of the array in column 0
+ for(int i = 0; i < 1; i++)
        {
- theMap.setLocation(i, 5, loc);
+ theMap.setLocation(i, 0, loc);
         }
- 
  */
         
        
