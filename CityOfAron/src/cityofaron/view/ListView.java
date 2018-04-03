@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
+import cityofaron.control.GameControl;
 
 /**
  *
@@ -137,13 +138,12 @@ public class ListView extends MenuView {
         }
     }
 
-    //Please check if this is ok?
-    /*private void saveReportAnimals() {
+        private void saveReportAnimals() {
         String saveAnimals;
         System.out.println("\nPlease enther the name of your saved file.");
         keyboard.nextLine();
         saveAnimals = keyboard.nextLine();
-        GameControl.saveReportAnimals(saveAnimal);
-    }*/
+        GameControl.saveReportAnimals(saveAnimals);
+    }
 
 }
