@@ -187,7 +187,6 @@ String  hills= "\nYou are the hills. The hills are natural barrier and defense o
 
        //create a new Location object
        Location loc = new Location();
-
        //use setters in the Location class to set the description and symbol
        loc.setDescription(river + "\nWhile the city of Aaron enjoys year round summer, harvest may wary. Always maintain some wheat in store.");
        loc.setSymbol("~~~");  
