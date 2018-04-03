@@ -195,12 +195,8 @@ String  forest= "\nYou are in the forest of Lehi" +
        {
  theMap.setLocation(i, 0, loc);
         }
- 
- */
-        
-       
        theGame.setTheMap(theMap);
-    }
+       }
     
     
     // the getSavedGame method
