@@ -91,3 +91,45 @@
        theGame.setTheMap(theMap);
     }
 
+                          // The createMap method
+    // Purpose: creates the location objects and the map
+    // Parameters: none
+    // Returns: none
+    public static void createMap(){
+        //create the Map object, it is 5 x 5
+        //refer to the Map constructor
+        Map theMap = new Map(MAX_ROW, MAX_COL);
+
+       //create a string that will go in the Location objects
+       //that contain the river
+       String river = "\nYou are on the River. The river is the source" +
+       "\nof life for our city. The river marks the eastern " +
+       "\nboundary of the city - it is wilderness to the East.";
+
+       //create a new Location object
+       Location loc = new Location();
+
+       //use setters in the Location class to set the description and symbol
+       loc.setDescription(river);
+       loc.setSymbol("~~~");  
+
+       //set this location object in each cell of the array in column 4      
+       for(int i = 0; i < MAX_ROW; i++)
+       {
+           theMap.setLocation(i, 4, loc);
+       }
+
+       //define the string for a farm land location
+       String farmland = "\nYou are on the fertile banks of the River." +
+       "\nIn the springthis low farmland floods and is covered with rich" +
+       "\nnew soil. Wheat is planted as far as you can see."; 
+
+       //set a farmland location with a hint
+       loc = new Location();
+       loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+       loc.setSymbol("!!!");
+        
+        //set this location object in each cell of the array in column 2
+        //theMap.setLocation(i , 2, loc);
+
+       //Put the other locations here (TODO / UPDATE this function...)
