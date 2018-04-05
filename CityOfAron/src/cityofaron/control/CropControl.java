@@ -165,7 +165,10 @@ public class CropControl {
         if (peopleFed < cropData.getPopulation()) {
             peopleStarved = cropData.getPopulation() - peopleFed;
         }
-
+      // As part of week-13 added function what would happen if people would starve to death
+        if (peopleStarved > cropData.getPopulation()) throw new Exception
+            ("Your actions have cost the lives of your people! You have coused femine and the city has perished! Game over.");
+      
         cropData.setPopulation(cropData.getPopulation() - peopleStarved);
 
         //return peopleStarved 
@@ -285,5 +288,20 @@ public class CropControl {
         //Return wheatInStore
         return wheatInStore;
 }
-
+    // The setYewYear method
+    // Purpose: To advance year and ens game if and when the 10 years have passed
+    // Parameters: none
+    // Returns: The new/curent year
+    // Pre-conditions: none
+public static int setNewYear(int year, CropData cropData) throws Exception{
+   int newyear = cropData.getYear();
+    if (year <= 10) {
+        newyear = year + 1;
+        cropData.setYear(newyear);
+        return newyear;
+    }
+    if (newyear > 10) throw new Exception
+    ("You have sucesfully governed your people for 10 years your term as the governor has come to an end.Continue as wisely in your future enedeviours! Game over."); 
+    // I would like to also make it show a final report,but I don't yet know how to do that.
+}
 }
