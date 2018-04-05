@@ -33,12 +33,8 @@
        loc = new Location();
        loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
        loc.setSymbol("!!!");
-        
-      //set this location object in each cell of the array in column 3      
-       for(int i = 0; i < 4; i++)
-       {
-           theMap.setLocation(i, 3, loc);
-       } 
+       theMap.setLocation(i, 3, loc);
+       
        //create a string that will go in the Location objects
        //that contain the river
        String river = "\nYou are on the River. The river is the source" +
@@ -49,11 +45,8 @@
        //use setters in the Location class to set the description and symbol
        loc.setDescription(river + "\nWhile the city of Aaron enjoys year round summer, harvest may wary. Always maintain some wheat in store.");
        loc.setSymbol("~~~");  
-       //set this location object in each cell of the array in column 2     
-       for(int i = 0; i < 3; i++)
-       {
-           theMap.setLocation(i, 2, loc);
-       }
+       theMap.setLocation(i, 2, loc);
+       
        
        //define the string for a port location
        System.out.println("creating port");
@@ -65,12 +58,8 @@
         loc = new Location();
         loc.setDescription(port + "\nBuy and sell land to acumulate aditional wheat. Be carefull not gable to much of wheat or people will starve!.");
         loc.setSymbol("$+$");
- 
-        //set this location object in each cell of the array in column 1
-        for(int i = 0; i < 2; i++)
-        {
         theMap.setLocation(i, 1, loc);
-        }
+        
         
         //define the string for a forest  location                        
         System.out.println("creating forest");
@@ -81,17 +70,11 @@
        loc = new Location();
        loc.setDescription(forest + "\nAlways try to balance population growth and food surpluss. Never lose track of neither.");
        loc.setSymbol("^^^");
- 
-        //set this location object in each cell of the array in column 0
-        for(int i = 0; i < 1; i++)
-        {
        theMap.setLocation(i, 0, loc);
-        }
-        
        theGame.setTheMap(theMap);
     }
 
-                          // The createMap method
+     // The createMap method
     // Purpose: creates the location objects and the map
     // Parameters: none
     // Returns: none
@@ -128,8 +111,46 @@
        loc = new Location();
        loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
        loc.setSymbol("!!!");
-        
-        //set this location object in each cell of the array in column 2
+                //set this location object in each cell of the array in column 2
         //theMap.setLocation(i , 2, loc);
-
        //Put the other locations here (TODO / UPDATE this function...)
+        
+            //define the string for a port location
+       System.out.println("creating port");
+       String  port= "\nYou are at the river port." +
+       "\nThe port is major trading center and source of much wealth of the city" +
+       "\nHere the citisens of the city do much of their trade and bussiness with the outside world.";
+       
+        // set a port location with a hint
+        loc = new Location();
+        loc.setDescription(port + "\nBuy and sell land to acumulate aditional wheat. Be carefull not gable to much of wheat or people will starve!.");
+        loc.setSymbol("$+$");
+        theMap.setLocation(i, 2, loc);
+        
+               //define the string for a court location
+       System.out.println("creating court");
+       String  hall= "\nYou are at the city court." +
+       "\nThe city court serves as your court and is a seat of local government." +
+       "\nHere decisions to sell or buy new land are made and provision for a year are planed.";
+       
+        // set a hall location with a hint
+        loc = new Location();
+        loc.setDescription(port + "\nBuy and sell land to acumulate aditional wheat. Be carefull not gable to much of wheat or people will starve!.");
+        loc.setSymbol("$+$");
+        theMap.setLocation(i, 1, loc);
+        
+       //define the string for a court location
+       System.out.println("creating Temple");
+       String  hall= "\nYou are at the city Temple." +
+       "\nYou are in the main temple of the city which located in the city center." +
+       "\nThe temple is a sacred place of Worship and is the House of the lord.";
+       
+        // set a temple location with a hint
+        loc = new Location();
+        loc.setDescription(port + "\nAlways remember to pay tithing!");
+        loc.setSymbol("$+$");
+        theMap.setLocation(i, 0, loc);
+        
+        
+        
+        
