@@ -117,6 +117,47 @@ public class CropView {
             }
         }while(paramsNotOkay);
     }//the fourth one
+    
+       //The showStarvedView method()
+    //Purpose: shows the number of people in the population that starved
+    //Parameters: none
+    //Returns: none
+  public static void calcStarvedView() {
+ // Check peopleStarved  for this round.
+ int wheatInStore = theCropData.peopleStarved();
+boolean paramsNotOk;
+do {
+    paramsNotOk = false;
+    try {CropControl.peopleStarved(peopleFed, population, theCropData);
+   }
+    catch (Exception e)
+    {
+        System.out.println("Your actions cost the lives of your people and domned the city! Game over!");
+        System.out.println(e.getMessage());
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenu();
+        paramsNotOk = true;
+    }
+}while(paramsNotOk);
+  }
+  
+  
+  public static void setNewYearView() {
+    boolean paramsNotOk;
+    int year = 1;
+    do {
+        paramsNotOk = false;
+        try{CropControl.newYear(year, theCropData);
+        }
+        catch (Exception e) {
+        System.out.println("You have succesfully served your term as the governor and can now pursue for other positions in the Nephie government!");
+        System.out.println(e.getMessage());
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenu();
+        paramsNotOk = true;
+      }
+    }while(paramsNotOk);
+  }
 
 // The runCropsView method()
 // Purpose: runs the City of Aron Game
@@ -127,5 +168,7 @@ public class CropView {
         
         sellLandView();
     }
+    
+    
 
 }
