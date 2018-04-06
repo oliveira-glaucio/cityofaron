@@ -151,7 +151,7 @@ public class CropControl {
 //Parameters: none
 //Returns: must return a positive value with the number of people who starved. Returns 0 if no people starved.
 //Pre-conditions: people in the city must be positive; 
-    public static int calcStarved() {
+    public static int calcStarved() throws CropException{
 
         //peopleAdequatelyFed = wheatSeparatedForFood * 20
         int peopleFed = cropData.getWheatForPeople() * 20;
@@ -166,7 +166,7 @@ public class CropControl {
             peopleStarved = cropData.getPopulation() - peopleFed;
         }
       // As part of week-13 added function what would happen if people would starve to death
-        if (peopleStarved > cropData.getPopulation()) throw new Exception
+        if (cropData.getPopulation() * .50 > peopleStarved) throw new CropException
             ("Your actions have cost the lives of your people! You have coused femine and the city has perished! Game over.");
       
         cropData.setPopulation(cropData.getPopulation() - peopleStarved);
