@@ -166,7 +166,7 @@ public class CropControl {
             peopleStarved = cropData.getPopulation() - peopleFed;
         }
       // As part of week-13 added function what would happen if people would starve to death
-        if (cropData.getPopulation() * .50 > peopleStarved) throw new CropException
+        if (cropData.getPopulation() * .50 < peopleStarved) throw new CropException
             ("Your actions have cost the lives of your people! You have coused femine and the city has perished! Game over.");
       
         cropData.setPopulation(cropData.getPopulation() - peopleStarved);
