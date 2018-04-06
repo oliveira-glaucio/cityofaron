@@ -118,13 +118,13 @@ public class CropView {
         }while(paramsNotOkay);
     }//the fourth one
     
-       //The showStarvedView method()
-    //Purpose: shows the number of people in the population that starved
-    //Parameters: none
-    //Returns: none
-  public static void calcStarvedView() {
+  //The showStarvedView method()
+  //Purpose: shows the number of people in the population that starved
+  //Parameters: none
+  //Returns: none
+ public static void calcStarvedView(/* int peopleStarved = theCropData.peopleStarved();*/) {
  // Check peopleStarved  for this round.
- int wheatInStore = theCropData.peopleStarved();
+// int peopleStarved = theCropData.peopleStarved();
 boolean paramsNotOk;
 do {
     paramsNotOk = false;
@@ -147,7 +147,7 @@ do {
     int year = 1;
     do {
         paramsNotOk = false;
-        try{CropControl.newYear(year, theCropData);
+        try{CropControl.setNewYear(year, theCropData);
         }
         catch (Exception e) {
         System.out.println("You have succesfully served your term as the governor and can now pursue for other positions in the Nephie government!");
