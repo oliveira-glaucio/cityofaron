@@ -122,9 +122,9 @@ public class CropView {
   //Purpose: shows the number of people in the population that starved
   //Parameters: none
   //Returns: none
- public static void calcStarvedView(/* int peopleStarved = theCropData.peopleStarved();*/) {
+ public static void calcStarvedView() {
  // Check peopleStarved  for this round.
-// int peopleStarved = theCropData.peopleStarved();
+/int peopleStarved = CropControl.peopleStarved();
 boolean paramsNotOk;
 do {
     paramsNotOk = false;
