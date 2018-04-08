@@ -124,11 +124,12 @@ public class CropView {
   //Returns: none
  public static void calcStarvedView() {
  // Check peopleStarved  for this round.
-/int peopleStarved = CropControl.peopleStarved();
+ //int peopleStarved = CropControl.peopleStarved();
 boolean paramsNotOk;
 do {
     paramsNotOk = false;
-    try {CropControl.peopleStarved(peopleFed, population, theCropData);
+    
+    try {CropControl.calcStarved();
    }
     catch (Exception e)
     {

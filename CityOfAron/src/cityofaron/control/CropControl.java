@@ -31,13 +31,13 @@ public class CropControl {
     public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException {
         //if acresToSell < 0, return -1
         if (acresToSell < 0) {
-        throw new CropException("Unofrtunetly, you do not own any land at this momment. Please buy some and then try to sell later.");
+            throw new CropException("Unofrtunetly, you do not own any land at this momment. Please buy some and then try to sell later.");
         }
 
         //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if (acresToSell > owned) {
-        throw new CropException("You are trying to sell more land than you currentlu have,only banks exhibit this type of behaviour. Please insert smaller number");
+            throw new CropException("You are trying to sell more land than you currentlu have,only banks exhibit this type of behaviour. Please insert smaller number");
 
         }
 
@@ -151,7 +151,7 @@ public class CropControl {
 //Parameters: none
 //Returns: must return a positive value with the number of people who starved. Returns 0 if no people starved.
 //Pre-conditions: people in the city must be positive; 
-    public static int calcStarved() throws CropException{
+    public static int calcStarved() throws CropException {
 
         //peopleAdequatelyFed = wheatSeparatedForFood * 20
         int peopleFed = cropData.getWheatForPeople() * 20;
@@ -165,10 +165,11 @@ public class CropControl {
         if (peopleFed < cropData.getPopulation()) {
             peopleStarved = cropData.getPopulation() - peopleFed;
         }
-      // As part of week-13 added function what would happen if people would starve to death
-        if (cropData.getPopulation() * .50 < peopleStarved) throw new CropException
-            ("Your actions have cost the lives of your people! You have coused femine and the city has perished! Game over.");
-      
+        // As part of week-13 added function what would happen if people would starve to death
+        if (cropData.getPopulation() * .50 < peopleStarved) {
+            throw new CropException("Your actions have cost the lives of your people! You have coused femine and the city has perished! Game over.");
+        }
+
         cropData.setPopulation(cropData.getPopulation() - peopleStarved);
 
         //return peopleStarved 
@@ -188,19 +189,19 @@ public class CropControl {
 // Parameters: Wheat Allocated
 // Returns: Wheat Stored.
 // Pre-conditions: Wheat must be positive, and cannot exceed the amount that is stored
-    public static int feedPeople(CropData cropData, int wheatAllocated) throws CropException{
+    public static int feedPeople(CropData cropData, int wheatAllocated) throws CropException {
         // if wheatInStore < 0, return -1
         int wheatInStore = cropData.getWheatInStore();
         if (wheatInStore < 0) {
             throw new CropException("Unofrtunetly, your wheat reserves are empty!");
         }
-        
+
         //if wheatAllocated > wheatInStore,  return -1
         if (wheatAllocated > wheatInStore) {
             throw new CropException("You do not have that much  wheat in store to allocate. Please insert smaller number.");
         }
-          //if wheatAllocated > -1,  return -1
-        if(wheatAllocated <= -1) {
+        //if wheatAllocated > -1,  return -1
+        if (wheatAllocated <= -1) {
             throw new CropException("You are trying to allocate a negative number of wheat, which is impossible. Please type in positive number.");
         }
         // wheatInStore = wheatInStore– wheatAllocated
@@ -240,8 +241,7 @@ public class CropControl {
         //return acresOwned
         return acresOwned;
     }
-    
-    
+
 // The plantCrops method.
 // Purpose: plant the crops.
 // Parameters: the number of acres of land that the player wants to plant.
@@ -249,59 +249,63 @@ public class CropControl {
 // of wheat in store. If there's an error, an exception is throw.
 // Pre-conditions: number of wheat in store and acres must be enough for 
 // user to plant the crops.
-    
-    public int plantCrops(int acresToPlant,int acresOwned, int wheatInStore, CropData cropData) throws CropException {
+    public int plantCrops(int acresToPlant, int acresOwned, int wheatInStore, CropData cropData) throws CropException {
 
-    //If acresToPlant > acresOwned then, return -1
-    int owned = cropData.getAcresOwned();
-    if(acresToPlant > acresOwned)
-        throw new CropException("The amount of acres to plant can't be higher then the acres owned.");
-    
-    //Also, if acresToPlant > wheatInStore then, return -1
+        //If acresToPlant > acresOwned then, return -1
+        int owned = cropData.getAcresOwned();
+        if (acresToPlant > acresOwned) {
+            throw new CropException("The amount of acres to plant can't be higher then the acres owned.");
+        }
+
+        //Also, if acresToPlant > wheatInStore then, return -1
         owned = cropData.getWheatInStore();
-        if(acresToPlant > wheatInStore) 
+        if (acresToPlant > wheatInStore) {
             throw new CropException("the amount of acres to plant can't be higher then the wheats in store.");
-        
-    //return acresOwned
-    return acresOwned;
+        }
 
-}
-    
+        //return acresOwned
+        return acresOwned;
+
+    }
+
     // The payOffering method.
     // Purpose: to subtract the value paid from user's storage.
     // Parameters: the percentage of harvest paid.
     // Returns: '0' if it's a valid value OR '-1' if it's an invalid value
     // Pre-conditions: Offering percentage must be between 0 and 100
-    
     public int payOffering(int wheatInStore, int offeringAmount, CropData cropData) throws CropException {
         //If payOffering < 0, then return -1
-        
-        if(cropData.getOffering() < 0)
+
+        if (cropData.getOffering() < 0) {
             throw new CropException("The percentage of offering must be positive.");
+        }
         //If payOffering > 100, then return -1
-        if(cropData.getOffering() > 100)
+        if (cropData.getOffering() > 100) {
             throw new CropException("The percentage of offering cannot be higher then 100%.");
-        
+        }
+
         //wheatInStore - offeringAmount
         cropData.setOffering(cropData.getWheatInStore() - offeringAmount);
-        
+
         //Return wheatInStore
         return wheatInStore;
-}
+    }
     // The setYewYear method
     // Purpose: To advance year and ens game if and when the 10 years have passed
     // Parameters: none
     // Returns: The new/curent year
     // Pre-conditions: none
-public static int setNewYear(int year, CropData cropData) throws Exception{
-   int newyear = cropData.getYear();
-    if (year <= 10) {
-        newyear = year + 1;
-        cropData.setYear(newyear);
-        return newyear;
+
+    public static int setNewYear(int year, CropData cropData) throws Exception {
+        int newyear = cropData.getYear();
+        if (year <= 10) {
+            newyear = year + 1;
+            cropData.setYear(newyear);
+            return newyear;
+        } else {
+            throw new Exception("You have sucesfully governed your people for 10 years your term as the governor has come to an end.Continue as wisely in your future enedeviours! Game over.");
+        }
+        // I would like to also make it show a final report,but I don't yet know how to do that.
     }
-    if (newyear > 10) throw new Exception
-    ("You have sucesfully governed your people for 10 years your term as the governor has come to an end.Continue as wisely in your future enedeviours! Game over."); 
-    // I would like to also make it show a final report,but I don't yet know how to do that.
-}
+
 }

@@ -12,7 +12,7 @@ import cityofaron.model.Player;
 // Date last modified: February 2018
 //-------------------------------------------------------------
 public class GameMenuView extends MenuView {  
-    
+           
     // The MainMenuView constructor
     // Purpose: Initialize the menu data
     // Parameters: none
@@ -77,12 +77,41 @@ public class GameMenuView extends MenuView {
 
 
     public void moveToNewLocation() {
-        System.out.println("\n Move to a new location.");
-    }
-
-    public void manageCrops() {
-        System.out.println("\nManage the Crops.");
+        int rowPosition, colPosition;
+        
+        System.out.println("\nEnter the coordinates of the location you want to move to.\n");
+        
+        System.out.print("\nEnter the x-coordinate: ");
+        colPosition = getNextValidInt(5) - 1;
+        
+        System.out.print("\nEnter the y-coordinate: ");
+        rowPosition = getNextValidInt(5) - 1;
+        
+        cityofaron.control.GameControl.setPlayerPosition(rowPosition, colPosition);
+        
+        Game theGame = cityofaron.CityOfAron.getTheGame();
+        
+        String DescriptionLocation = theGame.getTheMap().getLocation(rowPosition, colPosition).getDescription();
+        
+        System.out.println("\n" + DescriptionLocation);
     }
 
     
+    public int getNextValidInt(int maxValue){
+        int inputValue = 0;
+        do
+        {
+          inputValue = keyboard.nextInt();
+          if(inputValue < 1 || inputValue > maxValue)
+          {
+              System.out.format("\nError: input value must be between 1 and " + maxValue + ". try again: ", max);
+          }
+        } while(inputValue < 1 || inputValue > maxValue);
+        
+        return inputValue;
+    }
+    
+    public void manageCrops() {
+        System.out.println("\nManage the Crops.");
+    }
 }
