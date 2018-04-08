@@ -121,14 +121,14 @@ public class GameControl {
         //Desert
         String desertDescription = "\nthis is a desert :o";
         Location locDesert = new Location();
-        locVillage.setDescription(desertDescription);
-        locVillage.setSymbol("...");
+        locDesert.setDescription(desertDescription);
+        locDesert.setSymbol("...");
 
         //set this location object in each cell of the array in column 4      
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 4, locRiver);
-            theMap.setLocation(i, 3, locRiver);
-            theMap.setLocation(i, 2, locRiver);
+            theMap.setLocation(i, 3, locFarmLand);
+            theMap.setLocation(i, 2, locFarmLand);
 
             if (i <= 2) {
                 theMap.setLocation(i, 1, locVillage);

@@ -4,6 +4,7 @@ package cityofaron.view;
 import cityofaron.MenuView;
 import cityofaron.model.CropData;
 import cityofaron.model.Game;
+import cityofaron.model.Map;
 import java.util.Scanner;
 import cityofaron.model.Player;
 
@@ -61,7 +62,31 @@ public class GameMenuView extends MenuView {
     // Returns: none
     // ===================================     
     public void viewMap() {
-        System.out.println("\nDisplay a map of the City of Aron.");
+        
+        Game theGame = cityofaron.CityOfAron.getTheGame();        
+        Map theMap = theGame.getTheMap();
+        
+        String columns = "";
+        
+        System.out.println("\nThe Map of the City of Aron\n");
+                
+        //print each line (row)
+        for(int y = 0; y < 5; y++){
+        
+            //print columns of each row
+            for(int i = 0; i< 5; i++){
+            columns += "|" + theMap.getLocation(y, i).getSymbol();
+            }
+            
+            System.out.println(columns + "|");                       
+            columns = "";            
+        }                
+        
+        System.out.println("\n\nKey:\n" +
+                            "oOo - village\n" +
+                            "!!! - wheat\n" +
+                            "~~~ - River\n" +
+                            "... - desert");        
  }
 
     // The viewList() method
